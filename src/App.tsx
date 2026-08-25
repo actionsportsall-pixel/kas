@@ -1,0 +1,388 @@
+import React, { useState, useEffect } from 'react';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { IntroSection } from './components/IntroSection';
+import { ExperiencesOverview } from './components/ExperiencesOverview';
+import { SurfSection } from './components/SurfSection';
+import { BootCampSection } from './components/BootCampSection';
+import { PadelSection } from './components/PadelSection';
+import { PadelTournamentSchedule } from './components/PadelTournamentSchedule';
+import { AboutSergioCosta } from './components/AboutSergioCosta';
+import { TeamBuildingSection } from './components/TeamBuildingSection';
+import { ComingSoonSection } from './components/ComingSoonSection';
+import { TestimonialsSection } from './components/TestimonialsSection';
+import { GallerySection } from './components/GallerySection';
+import { BookingContactSection } from './components/BookingContactSection';
+import { BookingModal } from './components/BookingModal';
+import { LegalModal, LegalDocType } from './components/LegalModal';
+import { EditContentModal } from './components/EditContentModal';
+import { Footer } from './components/Footer';
+import { INITIAL_BOOTCAMP_DETAILS, SERGIO_BIO, GOOGLE_BOOKING_FORM_URL } from './data/mockData';
+import { ActivityType } from './types';
+import { ArrowLeft, Compass } from 'lucide-react';
+
+export default function App() {
+  const [currentPage, setCurrentPage] = useState<string>('inicio');
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [selectedActivity, setSelectedActivity] = useState<string | undefined>();
+  const [legalModalType, setLegalModalType] = useState<LegalDocType | null>(null);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [inquiryNote, setInquiryNote] = useState<string>('');
+
+  // Editable states for Sérgio Costa
+  const [bootCampDetails, setBootCampDetails] = useState(INITIAL_BOOTCAMP_DETAILS);
+  const [bio, setBio] = useState(SERGIO_BIO);
+
+  const handleNavigate = (pageId: string) => {
+    if (pageId === 'experiencias') {
+      setCurrentPage('inicio');
+      window.location.hash = 'experiencias';
+      setTimeout(() => {
+        const el = document.getElementById('experiencias');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 80);
+      return;
+    }
+    setCurrentPage(pageId);
+    window.location.hash = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const syncPageFromHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'experiencias') {
+        setCurrentPage('inicio');
+        setTimeout(() => {
+          const el = document.getElementById('experiencias');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else if (['inicio', 'surf', 'padel', 'bootcamp', 'sobre', 'teambuilding', 'contactos'].includes(hash)) {
+        setCurrentPage(hash);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    syncPageFromHash();
+    window.addEventListener('hashchange', syncPageFromHash);
+    return () => window.removeEventListener('hashchange', syncPageFromHash);
+  }, []);
+
+  const handleOpenBookingModal = (_activityKey?: string) => {
+    window.open(GOOGLE_BOOKING_FORM_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleOpenInquiry = (serviceTitle: string) => {
+    setInquiryNote(`Gostaria de pedir informações detalhadas sobre: ${serviceTitle}`);
+    handleNavigate('contactos');
+  };
+
+  const handleOpenBudgetModal = (serviceName: string) => {
+    setInquiryNote(`Gostaria de solicitar um orçamento para: ${serviceName}`);
+    handleNavigate('contactos');
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F7F4EE] text-[#273334] font-sans selection:bg-[#C96F4B] selection:text-white">
+      {/* Sticky Navigation */}
+      <Navbar
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
+        onOpenBookingModal={handleOpenBookingModal}
+        onOpenEditModal={() => setEditModalOpen(true)}
+      />
+
+      {/* Main Content Pages */}
+      <main className="min-h-[80vh]">
+        {/* PAGE 1: INÍCIO / HOME */}
+        {currentPage === 'inicio' && (
+          <div className="animate-in fade-in duration-300">
+            <Hero
+              onOpenBookingModal={handleOpenBookingModal}
+              onNavigate={handleNavigate}
+            />
+            <ExperiencesOverview
+              onOpenBookingModal={handleOpenBookingModal}
+              onNavigate={handleNavigate}
+            />
+            <IntroSection />
+            <ComingSoonSection />
+            <TestimonialsSection />
+            <GallerySection />
+            
+            {/* Quick Contact CTA Section on Home */}
+            <section className="py-16 bg-[#73999C] text-white border-t border-[#73999C]/20 text-center px-4">
+              <div className="max-w-3xl mx-auto space-y-4">
+                <span className="text-xs font-bold text-[#E4CEAD] uppercase tracking-widest">Pronto para começar?</span>
+                <h2 className="text-3xl sm:text-4xl font-display font-bold uppercase text-white">RESERVA A TUA EXPERIÊNCIA HOJE</h2>
+                <p className="text-[#F7F4EE]/90 text-sm">Experiências personalizadas, horários flexíveis e todo o equipamento incluído.</p>
+                <div className="pt-2 flex flex-wrap justify-center gap-4">
+                  <button
+                    onClick={() => handleOpenBookingModal()}
+                    className="px-8 py-3.5 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-widest rounded-2xl shadow-lg transition-all"
+                  >
+                    Reservar Atividade
+                  </button>
+                  <button
+                    onClick={() => handleNavigate('contactos')}
+                    className="px-8 py-3.5 bg-[#F7F4EE] hover:bg-white text-[#273334] font-bold text-xs uppercase tracking-widest rounded-2xl shadow-xs transition-all"
+                  >
+                    Ver Contactos & Localização
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        )}
+
+        {/* PAGE 2: SURF EXPERIENCES */}
+        {currentPage === 'surf' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+                  <span>Página Dedicada • Surf</span>
+                </div>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">SURF EXPERIENCES</h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Aulas individuais, cursos de grupo, rentals de material de alta performance e surf guide personalizado nos melhores spots de Portugal.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleNavigate('inicio')}
+                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
+                  >
+                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
+                    <span>Voltar à Página Principal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <SurfSection
+              onOpenBookingModal={handleOpenBookingModal}
+              onOpenInquiry={handleOpenInquiry}
+            />
+
+            <GallerySection />
+
+            <BookingContactSection
+              preselectedActivity="surf"
+              inquiryNote={inquiryNote}
+            />
+          </div>
+        )}
+
+        {/* PAGE 3: PADEL EXPERIENCES */}
+        {currentPage === 'padel' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+                  <span>Página Dedicada • Padel</span>
+                </div>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">PADEL EXPERIENCES</h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Aulas de aperfeiçoamento técnico, jogos treinados e a gestão completa de torneios dinâmicos com cronograma otimizado de 2 horas.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleNavigate('inicio')}
+                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
+                  >
+                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
+                    <span>Voltar à Página Principal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <PadelSection
+              onOpenBookingModal={handleOpenBookingModal}
+              onOpenBudgetModal={handleOpenBudgetModal}
+            />
+
+            <PadelTournamentSchedule onOpenBookingModal={handleOpenBookingModal} />
+
+            <BookingContactSection
+              preselectedActivity="padel"
+              inquiryNote={inquiryNote}
+            />
+          </div>
+        )}
+
+        {/* PAGE 4: SURF BOOT CAMP */}
+        {currentPage === 'bootcamp' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+                  <span>Programa de Imersão Intensiva • 5 Dias</span>
+                </div>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">SURF BOOT CAMP</h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Combina sessões diárias de surf, vídeo análise técnica, SurfSkate e treino funcional com o acompanhamento direto de Sérgio Costa.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleNavigate('inicio')}
+                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
+                  >
+                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
+                    <span>Voltar à Página Principal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <BootCampSection
+              bootCampDetails={bootCampDetails}
+              onOpenBookingModal={handleOpenBookingModal}
+              onOpenEditModal={() => setEditModalOpen(true)}
+            />
+
+            <BookingContactSection
+              preselectedActivity="surf-bootcamp"
+              inquiryNote={inquiryNote}
+            />
+          </div>
+        )}
+
+        {/* PAGE 5: SOBRE SÉRGIO COSTA */}
+        {currentPage === 'sobre' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+                  <span>Marca & Liderança</span>
+                </div>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">SOBRE A KAS</h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Beyond Sport. Beyond Expectations. Conheça a história, visão e a liderança da equipa KAS na criação de experiências outdoor memoráveis.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleNavigate('inicio')}
+                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
+                  >
+                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
+                    <span>Voltar à Página Principal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <AboutSergioCosta
+              bio={bio}
+              onOpenEditModal={() => setEditModalOpen(true)}
+            />
+
+            <TestimonialsSection />
+
+            <BookingContactSection
+              inquiryNote={inquiryNote}
+            />
+          </div>
+        )}
+
+        {/* PAGE 6: TEAM BUILDING */}
+        {currentPage === 'teambuilding' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+                  <span>Empresas & Eventos Especiais</span>
+                </div>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">TEAM BUILDING</h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Organizamos atividades de surf e padel para empresas, equipas, grupos de amigos, aniversários e eventos privados. Cada programa pode ser personalizado de acordo com o número de participantes, duração, objetivos e nível de experiência.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleNavigate('inicio')}
+                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
+                  >
+                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
+                    <span>Voltar à Página Principal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <TeamBuildingSection onOpenBookingModal={handleOpenBookingModal} />
+
+            <BookingContactSection
+              preselectedActivity="teambuilding"
+              inquiryNote={inquiryNote}
+            />
+          </div>
+        )}
+
+        {/* PAGE 7: CONTACTOS & RESERVAS */}
+        {currentPage === 'contactos' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+                  <span>Fale Connosco</span>
+                </div>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">CONTACTOS & RESERVAS</h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Envie-nos a sua mensagem ou pedido de reserva. Respondemos rapidamente para esclarecer todas as dúvidas.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleNavigate('inicio')}
+                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
+                  >
+                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
+                    <span>Voltar à Página Principal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <BookingContactSection
+              preselectedActivity={selectedActivity as ActivityType | undefined}
+              inquiryNote={inquiryNote}
+            />
+          </div>
+        )}
+      </main>
+
+      {/* Footer */}
+      <Footer
+        onNavigate={handleNavigate}
+        onOpenLegalModal={(type) => setLegalModalType(type)}
+        onOpenBookingModal={() => handleOpenBookingModal()}
+      />
+
+      {/* Interactive Booking Modal */}
+      <BookingModal
+        isOpen={bookingModalOpen}
+        onClose={() => setBookingModalOpen(false)}
+        initialActivity={selectedActivity}
+      />
+
+      {/* Legal Information Modal */}
+      <LegalModal
+        type={legalModalType}
+        onClose={() => setLegalModalType(null)}
+      />
+
+      {/* Content Customization Modal for Sérgio Costa */}
+      <EditContentModal
+        isOpen={editModalOpen}
+        onClose={() => setEditModalOpen(false)}
+        bootCampDetails={bootCampDetails}
+        setBootCampDetails={setBootCampDetails}
+        bio={bio}
+        setBio={setBio}
+      />
+    </div>
+  );
+}
