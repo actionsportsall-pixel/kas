@@ -9,13 +9,13 @@ import {
 } from '../types';
 
 // Image constants with local generated assets as high-priority
-export const HERO_IMAGE = '/imagens/surf.png';
-export const SERGIO_PORTRAIT = '/imagens/sergio.jpeg';
-export const PADEL_ACTION_IMAGE = '/imagens/padel.JPG';
-export const SURF_BOOTCAMP_IMAGE = '/src/assets/images/surf_group_soft_light_1787149949070.jpg';
-export const SURF_GROUP_EXPERIENCE_IMAGE = '/src/assets/images/surf_group_soft_light_1787149949070.jpg';
-export const SUP_PADDLE_IMAGE = '/src/assets/images/stand_up_paddle_kas_1787150261094.jpg';
-export const PRIVATE_SURF_SUNSET_IMAGE = '/src/assets/images/private_surf_couple_sunset_1787151221836.jpg';
+export const HERO_IMAGE = '/images/surf.png';
+export const SERGIO_PORTRAIT = '/images/sergio.jpeg';
+export const PADEL_ACTION_IMAGE = '/images/padel.JPG';
+export const SURF_BOOTCAMP_IMAGE = '/images/surf_bootcamp_group_1786008997192.jpg';
+export const SURF_GROUP_EXPERIENCE_IMAGE = '/images/surf_group_experience_1787149621419.jpg';
+export const SUP_PADDLE_IMAGE = '/images/stand_up_paddle_kas_1787150261094.jpg';
+export const PRIVATE_SURF_SUNSET_IMAGE = '/images/private_surf_couple_sunset_1787151221836.jpg';
 export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1Lcga3lFaORHgvOl0-BfV-gdReDnfCPVhr1JxBnl1z0M/edit';
 
 // KAS Brand Text Constants

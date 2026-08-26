@@ -2,7 +2,8 @@ import React from 'react';
 import { SURF_SERVICES } from '../data/mockData';
 import { CheckCircle2, MessageCircle, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import surfActionImg from '../assets/images/surf_action_spray_1787585994752.jpg';
+
+const surfActionImg = '/images/surf_action_spray_1787585994752.jpg';
 
 interface SurfSectionProps {
   onOpenBookingModal: (activityKey?: string) => void;
