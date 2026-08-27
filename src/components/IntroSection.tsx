@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Compass, Sparkles, HeartHandshake, Eye, Target } from 'lucide-react';
+import { ShieldCheck, Compass, Sparkles } from 'lucide-react';
 import { SERGIO_PORTRAIT, KAS_MANIFESTO, KAS_METHOD } from '../data/mockData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -41,12 +41,8 @@ export const IntroSection: React.FC = () => {
 
           {/* Brand Pillars Summary */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
-            <div className="p-6 rounded-2xl bg-[#73999C] text-white shadow-sm space-y-2">
-              <div className="flex items-center gap-2 text-[#A8C7C2]">
-                <Target className="w-5 h-5 text-[#A8C7C2]" />
-                <span className="font-display text-xl uppercase tracking-wider text-white">{t('A NOSSA MISSÃO', 'OUR MISSION', 'UNSERE MISSION')}</span>
-              </div>
-              <p className="text-xs text-white/95 leading-relaxed font-normal">
+            <div className="p-6 rounded-2xl bg-[#73999C] text-white shadow-sm flex items-center">
+              <p className="text-sm text-white/95 leading-relaxed font-normal">
                 {t(
                   'Inspirar pessoas através do desporto, da aventura e da natureza, proporcionando experiências memoráveis com elevados padrões de qualidade, segurança e hospitalidade.',
                   'Inspiring people through sport, adventure, and nature, delivering memorable experiences with the highest standards of quality, safety, and hospitality.',
@@ -55,12 +51,8 @@ export const IntroSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#E4CEAD]/40 text-[#273334] border border-[#E4CEAD]/60 shadow-sm space-y-2">
-              <div className="flex items-center gap-2 text-[#C96F4B]">
-                <Eye className="w-5 h-5 text-[#C96F4B]" />
-                <span className="font-display text-xl uppercase tracking-wider text-[#273334]">{t('A NOSSA VISÃO', 'OUR VISION', 'UNSERE VISION')}</span>
-              </div>
-              <p className="text-xs text-[#273334]/90 leading-relaxed font-normal">
+            <div className="p-6 rounded-2xl bg-[#E4CEAD]/40 text-[#273334] border border-[#E4CEAD]/60 shadow-sm flex items-center">
+              <p className="text-sm text-[#273334]/90 leading-relaxed font-normal">
                 {t(
                   'Ser uma referência na criação de experiências premium de desportos de ação, estabelecendo parcerias com hotéis, resorts, destinos turísticos e marcas de excelência.',
                   'To be a benchmark in creating premium action sports experiences, partnering with leading hotels, resorts, tourist destinations, and prestige brands.',
@@ -69,12 +61,8 @@ export const IntroSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#A8C7C2]/30 text-[#273334] border border-[#A8C7C2]/50 shadow-sm space-y-2">
-              <div className="flex items-center gap-2 text-[#73999C]">
-                <HeartHandshake className="w-5 h-5 text-[#73999C]" />
-                <span className="font-display text-xl uppercase tracking-wider text-[#273334]">{t('A NOSSA PROMESSA', 'OUR PROMISE', 'UNSER VERSPRECHEN')}</span>
-              </div>
-              <p className="text-xs text-[#273334]/90 leading-relaxed font-normal">
+            <div className="p-6 rounded-2xl bg-[#A8C7C2]/30 text-[#273334] border border-[#A8C7C2]/50 shadow-sm flex items-center">
+              <p className="text-sm text-[#273334]/90 leading-relaxed font-normal">
                 {t(
                   'Cada programa é exclusivo. Cada detalhe importa. Porque o verdadeiro luxo está na forma como fazemos sentir cada pessoa.',
                   'Every program is exclusive. Every detail matters. Because true luxury lies in how we make each person feel.',
@@ -89,8 +77,8 @@ export const IntroSection: React.FC = () => {
       {/* Main Manifesto Container — BEYOND SPORT */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10 border-t border-[#73999C]/15 text-center space-y-6">
         <h2 className="font-display text-4xl sm:text-6xl text-[#273334] tracking-wide uppercase leading-tight">
-          BEYOND SPORT. <br />
-          <span className="text-[#C96F4B]">BEYOND EXPECTATIONS.</span>
+          BEYOND SPORT <br />
+          <span className="text-[#C96F4B]">BEYOND EXPECTATIONS</span>
         </h2>
 
         <p className="text-base sm:text-lg text-[#273334]/90 leading-relaxed font-normal max-w-3xl mx-auto">

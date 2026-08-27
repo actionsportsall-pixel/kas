@@ -1,6 +1,6 @@
 import React from 'react';
 import { SergioCostaBio } from '../types';
-import { Award, HeartHandshake, CheckCircle2, SlidersHorizontal, ShieldCheck, Heart, Leaf, Sparkles, UserCheck } from 'lucide-react';
+import { Award, HeartHandshake, CheckCircle2, ShieldCheck, Heart, Leaf, Sparkles, UserCheck } from 'lucide-react';
 import { SERGIO_PORTRAIT, KAS_VALUES } from '../data/mockData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -21,11 +21,8 @@ export const AboutSergioCosta: React.FC<AboutSergioCostaProps> = ({
         
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <h2 className="font-display text-4xl sm:text-6xl text-[#273334] tracking-wide uppercase">
-            <span className="text-[#C96F4B]">{t('A EQUIPA KAS', 'THE KAS TEAM', 'DAS KAS-TEAM')}</span>
-          </h2>
           <p className="text-[#273334]/80 text-base sm:text-lg">
-            "{t('A excelência não é um objetivo. É um compromisso em cada detalhe.', 'Excellence is not a goal. It is a commitment in every detail.', 'Exzellenz ist kein Ziel. Es ist eine Verpflichtung in jedem Detail.')}"
+            {t('A excelência não é um objetivo. É um compromisso em cada detalhe.', 'Excellence is not a goal. It is a commitment in every detail.', 'Exzellenz ist kein Ziel. Es ist eine Verpflichtung in jedem Detail.')}
           </p>
         </div>
 
@@ -82,18 +79,6 @@ export const AboutSergioCosta: React.FC<AboutSergioCostaProps> = ({
             <blockquote className="p-6 rounded-2xl bg-[#A8C7C2]/20 border-l-4 border-[#C96F4B] text-[#273334]/90 text-xs italic leading-relaxed shadow-xs">
               "{t(bio.quote, '"At KAS we believe true luxury lies in quality time, the authenticity of experiences, and the dedicated attention given to each person."')}"
             </blockquote>
-
-            {onOpenEditModal && (
-              <div>
-                <button
-                  onClick={onOpenEditModal}
-                  className="px-4 py-2 rounded-xl bg-[#273334] text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 hover:bg-[#73999C]"
-                >
-                  <SlidersHorizontal className="w-4 h-4 text-[#A8C7C2]" />
-                  <span>{t('Editar biografia (Sérgio Costa)', 'Edit Biography (Sérgio Costa)')}</span>
-                </button>
-              </div>
-            )}
           </div>
         </div>
 

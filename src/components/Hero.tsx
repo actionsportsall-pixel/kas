@@ -31,8 +31,8 @@ export const Hero: React.FC<HeroProps> = () => {
         <div className="max-w-4xl space-y-1 text-left">
           {/* Main Display Heading */}
           <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-[#273334] leading-[0.88] tracking-wide uppercase drop-shadow-xs">
-            {t('CRAFTED AROUND YOU.', 'CRAFTED AROUND YOU.', 'RUND UM SIE GESTALTET.')}<br />
-            <span className="text-[#C96F4B]">{t('INSPIRED BY NATURE.', 'INSPIRED BY NATURE.', 'INSPIRIERT VON DER NATUR.')}</span>
+            {t('CRAFTED AROUND YOU', 'CRAFTED AROUND YOU', 'RUND UM SIE GESTALTET')}<br />
+            <span className="text-[#C96F4B]">{t('INSPIRED BY NATURE', 'INSPIRED BY NATURE', 'INSPIRIERT VON DER NATUR')}</span>
           </h1>
         </div>
       </div>

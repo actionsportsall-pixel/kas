@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FUTURE_SERVICES } from '../data/mockData';
-import { Sparkles, Bike, MapPin, Zap, Compass, Send, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Bike, MapPin, Zap, Compass } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const ComingSoonSection: React.FC = () => {
   const { t } = useLanguage();
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -19,13 +17,6 @@ export const ComingSoonSection: React.FC = () => {
       default:
         return Compass;
     }
-  };
-
-  const handleSubmitNewsletter = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-    setEmail('');
   };
 
   return (
@@ -52,7 +43,7 @@ export const ComingSoonSection: React.FC = () => {
         </div>
 
         {/* Future Services Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {FUTURE_SERVICES.map((srv) => {
             const Icon = getIcon(srv.iconName);
             return (
@@ -61,14 +52,22 @@ export const ComingSoonSection: React.FC = () => {
                 className="bg-[#F3E7DB] p-6 rounded-sm border border-[#2B2F33]/15 flex flex-col justify-between shadow-sm hover:border-[#2B2F33]/30 transition-all"
               >
                 <div>
-                  <div className="flex items-center justify-between border-b border-[#2B2F33]/10 pb-3 mb-4">
-                    <span className="text-[10px] font-bold text-[#E07A5F] uppercase tracking-wider bg-[#F8F6F0] px-2 py-0.5 rounded-sm border border-[#2B2F33]/10">
-                      {srv.badge}
-                    </span>
-                    <div className="w-8 h-8 rounded-sm bg-[#A7CFC6] text-[#2B2F33] flex items-center justify-center">
-                      <Icon className="w-4 h-4" />
+                  {(srv.badge || srv.iconName) && (
+                    <div className="flex items-center justify-between border-b border-[#2B2F33]/10 pb-3 mb-4">
+                      {srv.badge ? (
+                        <span className="text-[10px] font-bold text-[#E07A5F] uppercase tracking-wider bg-[#F8F6F0] px-2 py-0.5 rounded-sm border border-[#2B2F33]/10">
+                          {srv.badge}
+                        </span>
+                      ) : (
+                        <span />
+                      )}
+                      {srv.iconName && (
+                        <div className="w-8 h-8 rounded-sm bg-[#A7CFC6] text-[#2B2F33] flex items-center justify-center">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
 
                   <h3 className="font-display text-2xl text-[#2B2F33] uppercase tracking-wider mb-2">
                     {srv.title}
@@ -80,43 +79,6 @@ export const ComingSoonSection: React.FC = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Newsletter Form Box */}
-        <div className="max-w-2xl mx-auto p-8 bg-[#F3E7DB] border border-[#2B2F33]/20 rounded-sm shadow-md text-center space-y-6">
-          <div className="space-y-2">
-            <h3 className="font-display text-3xl text-[#2B2F33] uppercase tracking-wider">
-              {t('QUERES SER O PRIMEIRA A SABER DAS NOVIDADES?', 'WANT TO BE THE FIRST TO KNOW?', 'MÖCHTEN SIE ALS ERSTER DAVON ERFAHREN?')}
-            </h3>
-            <p className="text-[#2B2F33]/80 text-xs">
-              {t('Deixa o teu email para receberes acesso prioritário e condições exclusivas de lançamento.', 'Leave your email to get priority access and exclusive launch terms.', 'Hinterlassen Sie Ihre E-Mail-Adresse für bevorzugten Zugang und exklusive Eröffnungsangebote.')}
-            </p>
-          </div>
-
-          {submitted ? (
-            <div className="p-4 bg-[#F8F6F0] border border-[#E07A5F] text-[#2B2F33] flex items-center justify-center gap-3 rounded-sm">
-              <CheckCircle2 className="w-5 h-5 text-[#E07A5F] shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider">{t('Obrigado! Irá receber todas as novidades no seu email.', 'Thank you! You will receive updates in your email.', 'Vielen Dank! Sie erhalten alle Neuigkeiten per E-Mail.')}</span>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmitNewsletter} className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('Insere o teu endereço de email...', 'Enter your email address...', 'Geben Sie Ihre E-Mail-Adresse ein...')}
-                className="flex-1 px-4 py-3 rounded-sm bg-[#F8F6F0] border border-[#2B2F33]/20 text-[#2B2F33] placeholder-[#2B2F33]/50 text-xs focus:outline-none focus:border-[#2B2F33] transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                <span>{t('Subscrever', 'Subscribe', 'Abonnieren')}</span>
-              </button>
-            </form>
-          )}
         </div>
       </div>
     </section>

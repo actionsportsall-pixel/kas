@@ -19,7 +19,7 @@ import { EditContentModal } from './components/EditContentModal';
 import { Footer } from './components/Footer';
 import { INITIAL_BOOTCAMP_DETAILS, SERGIO_BIO, GOOGLE_BOOKING_FORM_URL } from './data/mockData';
 import { ActivityType } from './types';
-import { ArrowLeft, Compass } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('inicio');
@@ -151,15 +151,6 @@ export default function App() {
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Aulas individuais, cursos de grupo, rentals de material de alta performance e surf guide personalizado nos melhores spots de Portugal.
                 </p>
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleNavigate('inicio')}
-                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
-                    <span>Voltar à Página Principal</span>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -189,15 +180,6 @@ export default function App() {
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Aulas de aperfeiçoamento técnico, jogos treinados e a gestão completa de torneios dinâmicos com cronograma otimizado de 2 horas.
                 </p>
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleNavigate('inicio')}
-                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
-                    <span>Voltar à Página Principal</span>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -227,15 +209,6 @@ export default function App() {
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Combina sessões diárias de surf, vídeo análise técnica, SurfSkate e treino funcional com o acompanhamento direto de Sérgio Costa.
                 </p>
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleNavigate('inicio')}
-                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
-                    <span>Voltar à Página Principal</span>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -264,15 +237,6 @@ export default function App() {
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Beyond Sport. Beyond Expectations. Conheça a história, visão e a liderança da equipa KAS na criação de experiências outdoor memoráveis.
                 </p>
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleNavigate('inicio')}
-                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
-                    <span>Voltar à Página Principal</span>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -301,15 +265,6 @@ export default function App() {
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Organizamos atividades de surf e padel para empresas, equipas, grupos de amigos, aniversários e eventos privados. Cada programa pode ser personalizado de acordo com o número de participantes, duração, objetivos e nível de experiência.
                 </p>
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleNavigate('inicio')}
-                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
-                    <span>Voltar à Página Principal</span>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -322,7 +277,7 @@ export default function App() {
           </div>
         )}
 
-        {/* PAGE 7: CONTACTOS & RESERVAS */}
+        {/* PAGE 7: CONTACTOS */}
         {currentPage === 'contactos' && (
           <div className="animate-in fade-in duration-300">
             <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
@@ -330,19 +285,10 @@ export default function App() {
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
                   <span>Fale Connosco</span>
                 </div>
-                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">CONTACTOS & RESERVAS</h1>
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">CONTACTOS</h1>
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
-                  Envie-nos a sua mensagem ou pedido de reserva. Respondemos rapidamente para esclarecer todas as dúvidas.
+                  Envie-nos a sua mensagem ou pedido. Respondemos rapidamente para esclarecer todas as dúvidas.
                 </p>
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleNavigate('inicio')}
-                    className="inline-flex items-center gap-1.5 text-xs text-[#F7F4EE] hover:text-white uppercase font-bold tracking-wider opacity-90 hover:opacity-100 transition-all"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-[#E4CEAD]" />
-                    <span>Voltar à Página Principal</span>
-                  </button>
-                </div>
               </div>
             </div>
 

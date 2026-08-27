@@ -114,13 +114,13 @@ export const SURF_SERVICES: ServiceCardItem[] = [
   },
   {
     id: 'surf-guiding',
-    title: 'Surf Guiding & Spots Secretos',
+    title: 'Guia de Surf & Spots Secretos',
     description:
       'Acompanhamento personalizado para descobrir os melhores picos de surf de Portugal, de acordo com as marés, vento e o teu nível de experiência.',
     image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80',
     category: 'surf',
     activityKey: 'surf_guide',
-    tag: 'Surf Guiding',
+    tag: 'Guia de Surf',
     highlights: ['Conhecimento local profundo', 'Escolha das melhores ondas', 'Transporte privativo', 'Acompanhamento na água'],
   },
   {
@@ -136,13 +136,13 @@ export const SURF_SERVICES: ServiceCardItem[] = [
   },
   {
     id: 'sunset-sessions',
-    title: 'Sunset Sessions',
+    title: 'Sessões ao Pôr do Sol',
     description:
       'Sessões exclusivas ao fim do dia no mar, combinando surf ou SUP sob as cores do pôr do sol, seguidas de momento de relaxamento e hospitalidade KAS.',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
     category: 'surf',
     activityKey: 'outra_atividade',
-    tag: 'Sunset',
+    tag: 'Sessões ao Pôr do Sol',
     highlights: ['Pôr do sol', 'Ambiente descontraído', 'Registo fotográfico'],
   },
   {
@@ -316,34 +316,34 @@ export const SERGIO_BIO: SergioCostaBio = {
 export const FUTURE_SERVICES: FutureServiceItem[] = [
   {
     id: 'cycling-collection',
-    title: 'Cycling Experiences',
+    title: 'Experiências de Bicicleta',
     description: 'Rotas de estrada e montanha pelas mais belas paisagens de Portugal com suporte total.',
-    iconName: 'Bike',
-    badge: 'Land Experience',
+    iconName: '',
+    badge: '',
     image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'moto-collection',
-    title: 'Adventure Motorcycle Tours',
+    title: 'Aventura Passeio de Mota',
     description: 'Expedições em moto de aventura com itinerários cénicos, gastronomia e dormidas de charme.',
-    iconName: 'Zap',
-    badge: 'Land Experience',
+    iconName: '',
+    badge: '',
     image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'nature-walks',
-    title: 'Nature Walks & Treks',
+    title: 'Caminhadas e Trilhos na Natureza',
     description: 'Caminhadas guiadas ao longo de falésias e parques naturais para contemplar a biodiversidade.',
-    iconName: 'MapPin',
-    badge: 'Land Experience',
+    iconName: '',
+    badge: '',
     image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'international-trips',
     title: 'Viagens Internacionais KAS',
     description: 'Destinos exclusivos de surf, padel e aventura pelo mundo com curadoria e acompanhamento KAS.',
-    iconName: 'Compass',
-    badge: 'Signature Experience',
+    iconName: '',
+    badge: '',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
   },
 ];

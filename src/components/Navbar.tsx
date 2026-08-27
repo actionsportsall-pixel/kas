@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Calendar, Phone, Mail, SlidersHorizontal, ChevronDown, Globe, Waves, Trophy, Compass, Users, Sparkles } from 'lucide-react';
+import { Menu, X, Calendar, Phone, Mail, SlidersHorizontal, ChevronDown, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
@@ -54,10 +54,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
   }, []);
 
   const experienceLinks = [
-    { name: t('SURF', 'SURF', 'SURF'), id: 'surf', icon: Waves, tag: t('Ocean & Guiding', 'Ocean & Guiding', 'Ozean & Guiding') },
-    { name: t('PADEL', 'PADEL', 'PADEL'), id: 'padel', icon: Trophy, tag: t('Aulas & Torneios', 'Lessons & Tournaments', 'Kurse & Turniere') },
-    { name: t('BOOT CAMPS', 'BOOT CAMPS', 'BOOTCAMPS'), id: 'bootcamp', icon: Compass, tag: t('Imersão & Treino', 'Immersion & Training', 'Immersion & Training') },
-    { name: t('TEAM BUILDING', 'TEAM BUILDING', 'TEAMBUILDING'), id: 'teambuilding', icon: Users, tag: t('Retiros & Empresas', 'Retreats & Corporate', 'Retreats & Firmen') },
+    { name: t('SURF', 'SURF', 'SURF'), id: 'surf', tag: t('Ocean & Guiding', 'Ocean & Guiding', 'Ozean & Guiding') },
+    { name: t('PADEL', 'PADEL', 'PADEL'), id: 'padel', tag: t('Aulas & Torneios', 'Lessons & Tournaments', 'Kurse & Turniere') },
+    { name: t('BOOT CAMPS', 'BOOT CAMPS', 'BOOTCAMPS'), id: 'bootcamp', tag: t('Imersão & Treino', 'Immersion & Training', 'Immersion & Training') },
+    { name: t('TEAM BUILDING', 'TEAM BUILDING', 'TEAMBUILDING'), id: 'teambuilding', tag: t('Retiros & Empresas', 'Retreats & Corporate', 'Retreats & Firmen') },
   ];
 
   const isExpActive = experienceLinks.some((link) => link.id === currentPage) || currentPage === 'experiencias';
@@ -137,27 +137,25 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             {dropdownOpen && (
               <div className="absolute top-full left-0 pt-1.5 w-64 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                 <div className="bg-[#F7F4EE] border border-[#73999C]/30 rounded-2xl shadow-2xl py-2 overflow-hidden">
-                  <div className="px-3.5 py-1.5 text-[10px] font-bold text-[#73999C] uppercase tracking-widest border-b border-[#73999C]/15 flex items-center justify-between">
+                  <div className="px-3.5 py-1.5 text-[10px] font-bold text-[#73999C] uppercase tracking-widest border-b border-[#73999C]/15">
                     <span>{t('Experiências KAS', 'KAS Experiences', 'KAS-Erlebnisse')}</span>
-                    <Sparkles className="w-3 h-3 text-[#C96F4B]" />
                   </div>
 
                   {/* Main Overview Link */}
                   <a
                     href="#experiencias"
                     onClick={(e) => handleNavClick(e, 'experiencias')}
-                    className="px-3.5 py-2 text-xs font-bold uppercase tracking-wider flex items-center gap-2.5 text-[#C96F4B] hover:bg-[#C96F4B]/10 border-b border-[#73999C]/15 transition-colors"
+                    className="px-3.5 py-2 text-xs font-bold uppercase tracking-wider flex items-center justify-between text-[#C96F4B] hover:bg-[#C96F4B]/10 border-b border-[#73999C]/15 transition-colors"
                   >
-                    <Compass className="w-4 h-4 shrink-0 text-[#C96F4B]" />
                     <div className="flex flex-col leading-tight">
                       <span>{t('Visão Geral das Experiências', 'All Experiences Overview', 'Erlebnisübersicht')}</span>
                       <span className="text-[9px] text-[#273334]/70 font-normal normal-case">Ver todas as modalidades</span>
                     </div>
+                    <span className="text-[#C96F4B] text-xs">→</span>
                   </a>
 
                   {experienceLinks.map((item) => {
                     const isActive = currentPage === item.id;
-                    const ItemIcon = item.icon;
                     return (
                       <a
                         key={item.id}
@@ -169,12 +167,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                             : 'text-[#273334] hover:bg-[#73999C]/20'
                         }`}
                       >
-                        <div className="flex items-center gap-2.5">
-                          <ItemIcon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#73999C]'}`} />
-                          <div className="flex flex-col leading-tight">
-                            <span>{item.name}</span>
-                            <span className={`text-[9px] font-medium normal-case ${isActive ? 'text-white/80' : 'text-[#73999C]'}`}>{item.tag}</span>
-                          </div>
+                        <div className="flex flex-col leading-tight">
+                          <span>{item.name}</span>
+                          <span className={`text-[9px] font-medium normal-case ${isActive ? 'text-white/80' : 'text-[#73999C]'}`}>{item.tag}</span>
                         </div>
                         <span className={isActive ? "text-[#C96F4B] font-black" : "text-[#73999C]"}>→</span>
                       </a>
@@ -343,16 +338,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                 onClick={(e) => handleNavClick(e, 'experiencias')}
                 className="px-3 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest bg-[#C96F4B] text-white flex items-center justify-between shadow-xs"
               >
-                <div className="flex items-center gap-2">
-                  <Compass className="w-4 h-4" />
-                  <span>{t('Todas as Experiências', 'All Experiences')}</span>
-                </div>
+                <span>{t('Todas as Experiências', 'All Experiences')}</span>
                 <span>→</span>
               </a>
 
               {experienceLinks.map((link) => {
                 const isActive = currentPage === link.id;
-                const LinkIcon = link.icon;
                 return (
                   <a
                     key={link.id}
@@ -364,10 +355,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                         : 'text-[#273334] bg-white/50 hover:bg-[#73999C]/20'
                     }`}
                   >
-                    <div className="flex items-center gap-2">
-                      <LinkIcon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#73999C]'}`} />
-                      <span>{link.name}</span>
-                    </div>
+                    <span>{link.name}</span>
                     <span className="text-[#C96F4B] text-xs font-bold">→</span>
                   </a>
                 );

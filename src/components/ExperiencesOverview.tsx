@@ -14,16 +14,22 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
     {
       id: 'ocean',
       pageId: 'surf',
-      title: 'Ocean Experience',
-      subtitle: 'Surf, SUP, Guiding & Sunset Sessions',
+      title: '',
+      subtitle: t('Surf, SUP, Guia de Surf & Sessões ao Pôr do Sol', 'Surf, SUP, Guiding & Sunset Sessions', 'Surf, SUP, Guiding & Sunset Sessions'),
       description: t(
-        'Aulas privadas e pequenos grupos, Surf Guiding pelos melhores picos da costa, Stand Up Paddle em águas serenas e Sunset Sessions inesquecíveis.',
+        'Aulas privadas e pequenos grupos, Guia de Surf pelos melhores locais secretos, Stand Up Paddle em águas serenas e Sessões ao Pôr do Sol inesquecíveis.',
         'Private and small group lessons, Surf Guiding across top coast breaks, Stand Up Paddle on serene waters, and unforgettable Sunset Sessions.',
         'Privat- und Kleingruppenunterricht, Surf Guiding zu den besten Spots der Küste, Stand Up Paddle auf ruhigem Gewässer und unvergessliche Sunset Sessions.'
       ),
       icon: Waves,
       tag: t('Oceano & Natureza', 'Ocean & Nature', 'Ozean & Natur'),
-      items: ['Surf Experiences', 'Surf Guiding', 'Stand Up Paddle', 'Sunset Sessions', 'Surf Boot Camp'],
+      items: [
+        t('Experiências de Surf', 'Surf Experiences', 'Surf-Erlebnisse'),
+        t('Guia de Surf', 'Surf Guiding', 'Surf-Guiding'),
+        'Stand Up Paddle',
+        t('Sessões ao Pôr do Sol', 'Sunset Sessions', 'Sunset Sessions'),
+        t('Semanas Intensas de Surf', 'Intense Surf Weeks', 'Intensive Surf-Wochen'),
+      ],
       themeBg: 'bg-[#A8C7C2]/25 border-[#A8C7C2]/45',
       themeText: 'text-[#273334]',
       accentColor: 'text-[#73999C]',
@@ -33,16 +39,17 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
     {
       id: 'land',
       pageId: 'padel',
-      title: 'Padel Experience',
+      title: '',
       subtitle: t('Aulas & Torneios Express', 'Lessons & Express Tournaments', 'Kurse & Express-Turniere'),
-      description: t(
-        'Aulas de padel e torneios express de 2 horas.',
-        'Padel lessons and 2-hour express tournaments.',
-        'Padel-Kurse und 2-Stunden-Express-Turniere.'
-      ),
+      description: '',
       icon: Trophy,
       tag: '',
-      items: ['Padel Experiences', t('Torneios Express (2h)', 'Express Tournaments (2h)', 'Express-Turniere (2h)'), t('Aulas Privadas & Grupos', 'Private & Group Lessons', 'Privat- & Gruppenkurse')],
+      items: [
+        t('Experiências de Padel', 'Padel Experiences', 'Padel-Erlebnisse'),
+        t('Aulas Privadas', 'Private Lessons', 'Privatunterricht'),
+        t('Aulas de Grupo', 'Group Lessons', 'Gruppenunterricht'),
+        t('Torneios Feitos à Medida', 'Custom Tournaments', 'Maßgeschneiderte Turniere'),
+      ],
       themeBg: 'bg-[#E4CEAD]/35 border-[#E4CEAD]/60',
       themeText: 'text-[#273334]',
       accentColor: 'text-[#73999C]',
@@ -52,8 +59,8 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
     {
       id: 'signature',
       pageId: 'teambuilding',
-      title: 'Signature Experience',
-      subtitle: 'Private, Executive Retreats & Bespoke',
+      title: '',
+      subtitle: t('Retiros Privados, Executivos e Personalizadas', 'Private, Executive Retreats & Bespoke', 'Private, Executive Retreats & Bespoke'),
       description: t(
         'Programas 100% personalizados para clientes exigentes, famílias, quadros executivos e retiros de empresa. Hospitalidade, rigor e exclusividade total.',
         '100% tailor-made programs for discerning clients, families, executive boards, and corporate retreats. Hospitality, rigor, and complete exclusivity.',
@@ -61,7 +68,13 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
       ),
       icon: Sparkles,
       tag: t('Atendimento VIP & Empresas', 'VIP & Corporate Services', 'VIP & Firmenbetreuung'),
-      items: ['Private Experiences', 'Family Experiences', 'Executive Retreats', 'Team Building Corporate', 'Bespoke Outdoor'],
+      items: [
+        t('Experiências Privadas', 'Private Experiences', 'Private Erlebnisse'),
+        t('Experiências em Família', 'Family Experiences', 'Familienerlebnisse'),
+        t('Retiros Executivos', 'Executive Retreats', 'Executive Retreats'),
+        t('Team Building Corporativo', 'Team Building Corporate', 'Corporate Team Building'),
+        t('Atividades Personalizadas', 'Bespoke Outdoor', 'Maßgeschneiderte Outdoor-Aktivitäten'),
+      ],
       themeBg: 'bg-[#73999C] text-white border-[#73999C]',
       themeText: 'text-white',
       accentColor: 'text-[#A8C7C2]',
@@ -87,7 +100,7 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
             {t('AS NOSSAS', 'OUR', 'UNSERE')} <span className="text-[#C96F4B]">{t('EXPERIÊNCIAS', 'EXPERIENCES', 'ERLEBNISSE')}</span>
           </h2>
           <p className="text-[#273334]/80 text-base sm:text-lg">
-            "{t('Não seguimos programas pré-definidos. Criamos experiências à medida.', 'We do not follow pre-set programs. We create tailor-made experiences.', 'Wir folgen keinen vorgefertigten Programmen. Wir kreieren maßgeschneiderte Erlebnisse.')}"
+            {t('Não seguimos programas pré-definidos. Criamos experiências à medida.', 'We do not follow pre-set programs. We create tailor-made experiences.', 'Wir folgen keinen vorgefertigten Programmen. Wir kreieren maßgeschneiderte Erlebnisse.')}
           </p>
         </div>
 
@@ -103,17 +116,21 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
                 className={`group relative p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 border shadow-xs hover:shadow-md ${col.themeBg}`}
               >
                 <div>
-                  <h3 className="font-display text-3xl uppercase tracking-wider mb-2">
-                    {col.title}
-                  </h3>
+                  {col.title && (
+                    <h3 className="font-display text-3xl uppercase tracking-wider mb-2">
+                      {col.title}
+                    </h3>
+                  )}
 
-                  <p className={`text-xs font-semibold mb-4 uppercase tracking-wider ${isSignature ? 'text-[#A8C7C2]' : 'text-[#73999C]'}`}>
+                  <p className="text-xs font-semibold mb-4 uppercase tracking-wider text-[#273334]">
                     {col.subtitle}
                   </p>
 
-                  <p className={`text-xs leading-relaxed mb-6 ${isSignature ? 'text-white/90' : 'text-[#273334]/80'}`}>
-                    {col.description}
-                  </p>
+                  {col.description && (
+                    <p className={`text-xs leading-relaxed mb-6 ${isSignature ? 'text-white/90' : 'text-[#273334]/80'}`}>
+                      {col.description}
+                    </p>
+                  )}
 
                   {/* Bullet items inside collection */}
                   <div className="space-y-2 mb-8">
@@ -130,19 +147,12 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
                 <div className={`pt-5 border-t flex items-center justify-between ${isSignature ? 'border-white/15' : 'border-[#73999C]/20'}`}>
                   <button
                     onClick={() => handleNavigatePage(col.pageId)}
-                    className={`text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all ${
+                    className={`text-xs font-bold uppercase tracking-wider flex items-center gap-2 py-1 transition-all ${
                       isSignature ? 'text-[#A8C7C2] hover:text-white' : 'text-[#273334] hover:text-[#C96F4B]'
                     }`}
                   >
                     <span>{t('Ver Experiência', 'View Experience', 'Erlebnis ansehen')}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-
-                  <button
-                    onClick={() => onOpenBookingModal(col.id)}
-                    className="btn-terracotta text-[11px] py-2 px-4 shadow-xs"
-                  >
-                    {t('Personalizar', 'Customize', 'Anpassen')}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
                 </div>
               </div>

@@ -107,7 +107,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a href="#contactos" onClick={(e) => handleNavClick(e, 'contactos')} className="hover:text-[#A8C7C2] transition-colors uppercase tracking-wider text-white/80">
-                  {t('Contactos & Reservas', 'Contacts & Bookings', 'Kontakt & Buchungen')}
+                  {t('Contactos', 'Contacts', 'Kontakt')}
                 </a>
               </li>
             </ul>
@@ -126,13 +126,6 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
             </ul>
-
-            <button
-              onClick={onOpenBookingModal}
-              className="mt-3 btn-terracotta text-xs py-2 px-4 shadow-xs"
-            >
-              <span>{t('Reservar agora', 'Book now', 'Jetzt buchen')}</span>
-            </button>
           </div>
 
           {/* Legal Links */}
