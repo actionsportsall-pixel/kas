@@ -91,23 +91,23 @@ export const EditContentModal: React.FC<EditContentModalProps> = ({
         </div>
 
         {/* Tab Selector */}
-        <div className="flex border-b border-[#2B2F33]/15 bg-[#F8F6F0] px-4 pt-2 gap-2">
+        <div className="flex border-b border-[#73999C]/20 bg-[#F7F4EE] px-4 pt-3 gap-2">
           <button
             onClick={() => setActiveTab('bootcamp')}
-            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors rounded-t-sm border-t border-x ${
+            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-2xl ${
               activeTab === 'bootcamp'
-                ? 'bg-[#F3E7DB] text-[#2B2F33] border-[#2B2F33]/20'
-                : 'text-[#2B2F33]/60 border-transparent hover:text-[#2B2F33]'
+                ? 'bg-[#73999C] text-white border-b-2 border-[#C96F4B] shadow-xs'
+                : 'bg-[#73999C]/15 text-[#273334] border border-[#73999C]/25 hover:bg-[#73999C] hover:text-white'
             }`}
           >
             Programa Boot Camp
           </button>
           <button
             onClick={() => setActiveTab('bio')}
-            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors rounded-t-sm border-t border-x ${
+            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-2xl ${
               activeTab === 'bio'
-                ? 'bg-[#F3E7DB] text-[#2B2F33] border-[#2B2F33]/20'
-                : 'text-[#2B2F33]/60 border-transparent hover:text-[#2B2F33]'
+                ? 'bg-[#73999C] text-white border-b-2 border-[#C96F4B] shadow-xs'
+                : 'bg-[#73999C]/15 text-[#273334] border border-[#73999C]/25 hover:bg-[#73999C] hover:text-white'
             }`}
           >
             Biografia & Certificações
@@ -292,7 +292,7 @@ export const EditContentModal: React.FC<EditContentModalProps> = ({
                   />
                   <button
                     onClick={handleAddCert}
-                    className="px-4 py-2 rounded-sm bg-[#A7CFC6] text-[#2B2F33] font-bold text-xs uppercase tracking-wider flex items-center gap-1"
+                    className="px-4 py-2 rounded-2xl bg-[#73999C] hover:bg-[#5D8184] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1 cursor-pointer transition-all"
                   >
                     <Plus className="w-4 h-4" />
                     <span>Adicionar</span>
@@ -304,13 +304,13 @@ export const EditContentModal: React.FC<EditContentModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-[#F8F6F0] border-t border-[#2B2F33]/15 flex items-center justify-between">
+        <div className="p-4 bg-[#F7F4EE] border-t border-[#73999C]/20 flex items-center justify-between">
           {savedMessage ? (
-            <span className="text-xs text-[#2B2F33] font-bold flex items-center gap-1 uppercase tracking-wider">
-              <Check className="w-4 h-4 text-[#E07A5F]" /> Alterações guardadas com sucesso!
+            <span className="text-xs text-[#273334] font-bold flex items-center gap-1 uppercase tracking-wider">
+              <Check className="w-4 h-4 text-[#C96F4B]" /> Alterações guardadas com sucesso!
             </span>
           ) : (
-            <span className="text-[10px] text-[#6B4F3A] uppercase tracking-wider font-semibold">
+            <span className="text-[10px] text-[#73999C] uppercase tracking-wider font-semibold">
               * As alterações ficam imediatamente refletidas no website.
             </span>
           )}
@@ -318,13 +318,13 @@ export const EditContentModal: React.FC<EditContentModalProps> = ({
           <div className="flex gap-2">
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-sm bg-[#F3E7DB] text-[#2B2F33] text-xs font-bold uppercase tracking-wider border border-[#2B2F33]/15"
+              className="px-4 py-2.5 rounded-2xl bg-[#73999C]/15 hover:bg-[#73999C] hover:text-white text-[#273334] text-xs font-bold uppercase tracking-wider border border-[#73999C]/30 transition-all cursor-pointer"
             >
               Cancelar
             </button>
             <button
               onClick={handleSave}
-              className="px-5 py-2 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
+              className="px-5 py-2.5 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md shadow-[#C96F4B]/20 transition-all cursor-pointer"
             >
               <Save className="w-4 h-4" />
               <span>Guardar Alterações</span>

@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = () => {
       {/* Main Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 w-full">
         {/* Text Content */}
-        <div className="max-w-4xl space-y-1 text-left">
+        <div className="max-w-4xl space-y-1 text-left animate-in fade-in slide-in-from-bottom-4 duration-700">
           {/* Main Display Heading */}
           <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-[#273334] leading-[0.88] tracking-wide uppercase drop-shadow-xs">
             {t('CRAFTED AROUND YOU', 'CRAFTED AROUND YOU', 'RUND UM SIE GESTALTET')}<br />

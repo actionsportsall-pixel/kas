@@ -44,30 +44,30 @@ export const ComingSoonSection: React.FC = () => {
             return (
               <div
                 key={srv.id}
-                className="bg-[#F3E7DB] p-6 rounded-sm border border-[#2B2F33]/15 flex flex-col justify-between shadow-sm hover:border-[#2B2F33]/30 transition-all"
+                className="bg-[#E4CEAD]/25 p-6 rounded-2xl border border-[#73999C]/25 flex flex-col justify-between shadow-sm hover:border-[#73999C]/50 transition-all"
               >
                 <div>
                   {(srv.badge || srv.iconName) && (
-                    <div className="flex items-center justify-between border-b border-[#2B2F33]/10 pb-3 mb-4">
+                    <div className="flex items-center justify-between border-b border-[#73999C]/15 pb-3 mb-4">
                       {srv.badge ? (
-                        <span className="text-[10px] font-bold text-[#E07A5F] uppercase tracking-wider bg-[#F8F6F0] px-2 py-0.5 rounded-sm border border-[#2B2F33]/10">
+                        <span className="text-[10px] font-bold text-[#C96F4B] uppercase tracking-wider bg-[#F7F4EE] px-2.5 py-1 rounded-xl border border-[#73999C]/20">
                           {srv.badge}
                         </span>
                       ) : (
                         <span />
                       )}
                       {srv.iconName && (
-                        <div className="w-8 h-8 rounded-sm bg-[#A7CFC6] text-[#2B2F33] flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-xl bg-[#A8C7C2] text-[#273334] flex items-center justify-center shadow-xs">
                           <Icon className="w-4 h-4" />
                         </div>
                       )}
                     </div>
                   )}
 
-                  <h3 className="font-display text-2xl text-[#2B2F33] uppercase tracking-wider mb-2">
+                  <h3 className="font-display text-2xl text-[#273334] uppercase tracking-wider mb-2">
                     {srv.title}
                   </h3>
-                  <p className="text-[#2B2F33]/70 text-xs leading-relaxed">
+                  <p className="text-[#273334]/70 text-xs leading-relaxed">
                     {srv.description}
                   </p>
                 </div>

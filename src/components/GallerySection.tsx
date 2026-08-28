@@ -100,23 +100,23 @@ export const GallerySection: React.FC = () => {
         <div className="fixed inset-0 z-50 bg-[#2B2F33]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
           <div className="relative max-w-4xl w-full bg-[#F3E7DB] rounded-sm overflow-hidden border border-[#2B2F33]/20 shadow-2xl flex flex-col">
             {/* Modal Header */}
-            <div className="p-4 bg-[#F8F6F0] border-b border-[#2B2F33]/15 flex items-center justify-between">
+            <div className="p-4 bg-[#F7F4EE] border-b border-[#73999C]/20 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <ImageIcon className="w-4 h-4 text-[#E07A5F]" />
-                <span className="font-display text-2xl text-[#2B2F33] uppercase tracking-wider">
+                <ImageIcon className="w-4 h-4 text-[#C96F4B]" />
+                <span className="font-display text-2xl text-[#273334] uppercase tracking-wider">
                   {selectedMedia.title}
                 </span>
               </div>
               <button
                 onClick={() => setSelectedMedia(null)}
-                className="p-1.5 bg-[#F3E7DB] text-[#2B2F33] hover:text-[#E07A5F] border border-[#2B2F33]/15 rounded-sm"
+                className="p-1.5 bg-[#F7F4EE] text-[#273334] hover:text-[#C96F4B] border border-[#73999C]/20 rounded-xl cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Expanded Image */}
-            <div className="max-h-[70vh] bg-[#2B2F33] flex items-center justify-center overflow-hidden">
+            <div className="max-h-[70vh] bg-[#273334] flex items-center justify-center overflow-hidden">
               <img
                 src={selectedMedia.src}
                 alt={selectedMedia.title}
@@ -126,15 +126,15 @@ export const GallerySection: React.FC = () => {
             </div>
 
             {/* Caption Footer */}
-            <div className="p-4 bg-[#F8F6F0] border-t border-[#2B2F33]/15 flex items-center justify-between">
-              <p className="text-[#2B2F33]/80 text-xs">
+            <div className="p-4 bg-[#F7F4EE] border-t border-[#73999C]/20 flex items-center justify-between">
+              <p className="text-[#273334]/80 text-xs">
                 {selectedMedia.caption}
               </p>
               <button
                 onClick={() => setSelectedMedia(null)}
-                className="px-4 py-2 bg-[#A7CFC6] text-[#2B2F33] font-bold text-xs uppercase tracking-wider rounded-sm"
+                className="px-6 py-2.5 bg-[#73999C] hover:bg-[#5D8184] text-white font-bold text-xs uppercase tracking-wider rounded-2xl cursor-pointer shadow-xs"
               >
-                Fechar
+                {t('Fechar', 'Close', 'Schließen')}
               </button>
             </div>
           </div>

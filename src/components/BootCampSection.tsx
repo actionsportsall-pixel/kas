@@ -106,7 +106,7 @@ export const BootCampSection: React.FC<BootCampSectionProps> = ({
             <div className="pt-2">
               <button
                 onClick={() => onOpenBookingModal('boot_camp')}
-                className="px-6 py-3.5 rounded-sm bg-[#A8C7C2] hover:bg-[#8eb8b2] text-[#273334] font-bold text-xs uppercase tracking-widest shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2"
+                className="px-6 py-3 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#C96F4B]/20 transition-all inline-flex items-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>{t('Quero participar no Boot Camp', 'Join the Boot Camp', 'Am Boot Camp teilnehmen')}</span>
@@ -154,25 +154,25 @@ export const BootCampSection: React.FC<BootCampSectionProps> = ({
           <div className="flex justify-center mb-12">
             <button
               onClick={onOpenEditModal}
-              className="inline-flex items-center gap-2 text-xs text-[#2B2F33] hover:text-[#E07A5F] bg-[#F3E7DB] hover:bg-[#ebdccb] border border-[#2B2F33]/20 px-5 py-2.5 rounded-sm uppercase tracking-wider font-bold transition-all shadow-xs"
+              className="inline-flex items-center gap-2 text-xs text-[#273334] hover:text-white bg-[#73999C]/15 hover:bg-[#73999C] border border-[#73999C]/30 px-5 py-2.5 rounded-2xl uppercase tracking-wider font-bold transition-all shadow-xs cursor-pointer"
             >
-              <SlidersHorizontal className="w-4 h-4 text-[#E07A5F]" />
+              <SlidersHorizontal className="w-4 h-4 text-[#C96F4B]" />
               <span>{t('Personalizar Boot Camp (Sérgio Costa)', 'Customize Boot Camp (Sérgio Costa)', 'Boot Camp anpassen (Sérgio Costa)')}</span>
             </button>
           </div>
         )}
 
         {/* Prerequisites Box */}
-        <div className="p-8 rounded-sm bg-[#F3E7DB] border border-[#2B2F33]/20 shadow-md space-y-6">
-          <div className="flex items-center gap-3 border-b border-[#2B2F33]/15 pb-4">
-            <div className="w-10 h-10 rounded-sm bg-[#E07A5F] text-white flex items-center justify-center">
+        <div className="p-8 rounded-2xl bg-[#E4CEAD]/20 border border-[#73999C]/25 shadow-md space-y-6">
+          <div className="flex items-center gap-3 border-b border-[#73999C]/20 pb-4">
+            <div className="w-10 h-10 rounded-xl bg-[#C96F4B] text-white flex items-center justify-center shadow-xs">
               <ShieldAlert className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-display text-3xl text-[#2B2F33] uppercase tracking-wider">
+              <h3 className="font-display text-3xl text-[#273334] uppercase tracking-wider">
                 {t('PRÉ-REQUISITOS', 'PREREQUISITES', 'VORAUSSETZUNGEN')}
               </h3>
-              <p className="text-xs text-[#2B2F33]/70 uppercase tracking-wider font-semibold">
+              <p className="text-xs text-[#73999C] uppercase tracking-wider font-semibold">
                 {t('Informações essenciais para garantir o correto aproveitamento do programa', 'Essential information to ensure optimal program performance', 'Wichtige Informationen für eine optimale Programmnutzung')}
               </p>
             </div>
@@ -180,22 +180,22 @@ export const BootCampSection: React.FC<BootCampSectionProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {bootCampDetails.prerequisites.map((req, idx) => (
-              <div key={idx} className="flex items-start gap-3 bg-[#F8F6F0] p-4 rounded-sm border border-[#2B2F33]/10">
-                <CheckCircle2 className="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" />
-                <span className="text-xs font-medium text-[#2B2F33]">{req}</span>
+              <div key={idx} className="flex items-start gap-3 bg-[#F7F4EE] p-4 rounded-xl border border-[#73999C]/20">
+                <CheckCircle2 className="w-4 h-4 text-[#C96F4B] shrink-0 mt-0.5" />
+                <span className="text-xs font-medium text-[#273334]">{req}</span>
               </div>
             ))}
           </div>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#2B2F33]/15">
-            <p className="text-xs text-[#2B2F33]/60 italic">
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#73999C]/20">
+            <p className="text-xs text-[#273334]/60 italic">
               {t('* Nota: Todos os detalhes do programa e pré-requisitos podem ser adaptados para grupos fechados sob pedido especial.', '* Note: All program details and prerequisites can be tailored for private groups upon special request.', '* Hinweis: Alle Programmdetails und Voraussetzungen können auf Anfrage für private Gruppen angepasst werden.')}
             </p>
 
             <button
               onClick={() => onOpenBookingModal('boot_camp')}
               id="participar-bootcamp-btn"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#C96F4B]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>{t('Garantir Vaga no Boot Camp', 'Reserve Spot in Boot Camp', 'Platz im Boot Camp sichern')}</span>

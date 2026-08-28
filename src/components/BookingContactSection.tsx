@@ -8,11 +8,13 @@ interface BookingContactSectionProps {
   preselectedActivity?: ActivityType;
   inquiryNote?: string;
   onOpenBookingModal?: (activityKey?: string) => void;
+  showFaq?: boolean;
 }
 
 export const BookingContactSection: React.FC<BookingContactSectionProps> = ({
   preselectedActivity,
   onOpenBookingModal,
+  showFaq = false,
 }) => {
   const { t } = useLanguage();
 
@@ -76,8 +78,8 @@ export const BookingContactSection: React.FC<BookingContactSectionProps> = ({
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <FAQSection />
+        {/* FAQ Section - Only displayed when showFaq is true */}
+        {showFaq && <FAQSection />}
 
       </div>
     </section>

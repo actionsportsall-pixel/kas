@@ -839,10 +839,10 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-[#F8F6F0] border-t border-[#2B2F33]/15 text-right">
+        <div className="p-4 bg-[#F7F4EE] border-t border-[#73999C]/20 text-right">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-sm bg-[#A7CFC6] text-[#2B2F33] font-bold text-xs uppercase tracking-wider"
+            className="px-6 py-2.5 rounded-2xl bg-[#73999C] hover:bg-[#5D8184] text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-xs"
           >
             {t('Compreendido & Fechar', 'Understood & Close', 'Verstanden & Schließen')}
           </button>

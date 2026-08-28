@@ -194,13 +194,13 @@ export const FAQSection: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 border shadow-xs ${
+                className={`px-4 py-2 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer shadow-xs ${
                   isActive
-                    ? 'bg-[#273334] text-white border-[#273334]'
-                    : 'bg-[#E4CEAD]/30 text-[#273334] border-[#E4CEAD]/60 hover:bg-[#E4CEAD]/50 hover:border-[#73999C]/40'
+                    ? 'bg-[#73999C] text-white border-b-2 border-[#C96F4B]'
+                    : 'bg-[#73999C]/15 text-[#273334] border border-[#73999C]/25 hover:bg-[#73999C] hover:text-white'
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#E4CEAD]' : 'text-[#73999C]'}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-[#73999C]'}`} />
                 <span>{cat.label}</span>
               </button>
             );

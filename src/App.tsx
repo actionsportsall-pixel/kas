@@ -17,6 +17,8 @@ import { BookingModal } from './components/BookingModal';
 import { LegalModal, LegalDocType } from './components/LegalModal';
 import { EditContentModal } from './components/EditContentModal';
 import { Footer } from './components/Footer';
+import { WaveSeparator } from './components/WaveSeparator';
+import { FadeInSection } from './components/FadeInSection';
 import { INITIAL_BOOTCAMP_DETAILS, SERGIO_BIO, GOOGLE_BOOKING_FORM_URL } from './data/mockData';
 import { ActivityType } from './types';
 import { Compass } from 'lucide-react';
@@ -105,37 +107,64 @@ export default function App() {
               onOpenBookingModal={handleOpenBookingModal}
               onNavigate={handleNavigate}
             />
-            <ExperiencesOverview
-              onOpenBookingModal={handleOpenBookingModal}
-              onNavigate={handleNavigate}
-            />
-            <IntroSection />
-            <GallerySection />
-            <ComingSoonSection />
-            <TestimonialsSection />
+            
+            <FadeInSection>
+              <ExperiencesOverview
+                onOpenBookingModal={handleOpenBookingModal}
+                onNavigate={handleNavigate}
+              />
+            </FadeInSection>
+            
+            <WaveSeparator />
+            
+            <FadeInSection>
+              <IntroSection />
+            </FadeInSection>
+            
+            <WaveSeparator flipX />
+            
+            <FadeInSection>
+              <GallerySection />
+            </FadeInSection>
+            
+            <WaveSeparator />
+            
+            <FadeInSection>
+              <ComingSoonSection />
+            </FadeInSection>
+            
+            <WaveSeparator flipX />
+            
+            <FadeInSection>
+              <TestimonialsSection />
+            </FadeInSection>
+            
+            <WaveSeparator />
             
             {/* Quick Contact CTA Section on Home */}
-            <section className="py-16 bg-[#73999C] text-white border-t border-[#73999C]/20 text-center px-4">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <span className="text-xs font-bold text-[#E4CEAD] uppercase tracking-widest">Pronto para começar?</span>
-                <h2 className="text-3xl sm:text-4xl font-display font-bold uppercase text-white">RESERVA A TUA EXPERIÊNCIA HOJE</h2>
-                <p className="text-[#F7F4EE]/90 text-sm">Experiências personalizadas, horários flexíveis e todo o equipamento incluído.</p>
-                <div className="pt-2 flex flex-wrap justify-center gap-4">
-                  <button
-                    onClick={() => handleOpenBookingModal()}
-                    className="px-8 py-3.5 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-widest rounded-2xl shadow-lg transition-all"
-                  >
-                    Reservar Atividade
-                  </button>
-                  <button
-                    onClick={() => handleNavigate('contactos')}
-                    className="px-8 py-3.5 bg-[#F7F4EE] hover:bg-white text-[#273334] font-bold text-xs uppercase tracking-widest rounded-2xl shadow-xs transition-all"
-                  >
-                    Ver Contactos & Localização
-                  </button>
+            <FadeInSection>
+              <section className="py-16 bg-[#73999C] text-white border-t border-[#73999C]/20 text-center px-4">
+                <div className="max-w-3xl mx-auto space-y-4">
+                  <span className="text-xs font-bold text-[#E4CEAD] uppercase tracking-widest">Pronto para começar?</span>
+                  <h2 className="text-3xl sm:text-4xl font-display font-bold uppercase text-white">RESERVA A TUA EXPERIÊNCIA HOJE</h2>
+                  <p className="text-[#F7F4EE]/90 text-sm">Experiências personalizadas, horários flexíveis e todo o equipamento incluído.</p>
+                  <div className="pt-2 flex flex-wrap justify-center gap-4">
+                    <button
+                      onClick={() => handleOpenBookingModal()}
+                      className="px-8 py-3 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider rounded-2xl shadow-md shadow-[#C96F4B]/20 transition-all cursor-pointer"
+                    >
+                      Reservar Atividade
+                    </button>
+                    <button
+                      onClick={() => handleNavigate('contactos')}
+                      className="px-8 py-3 bg-[#F7F4EE] hover:bg-white text-[#273334] font-bold text-xs uppercase tracking-wider rounded-2xl shadow-xs transition-all cursor-pointer"
+                    >
+                      Ver Contactos & Localização
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </FadeInSection>
           </div>
         )}
 
@@ -150,18 +179,29 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <WaveSeparator />
 
-            <SurfSection
-              onOpenBookingModal={handleOpenBookingModal}
-              onOpenInquiry={handleOpenInquiry}
-            />
+            <FadeInSection>
+              <SurfSection
+                onOpenBookingModal={handleOpenBookingModal}
+                onOpenInquiry={handleOpenInquiry}
+              />
+            </FadeInSection>
 
-            <GallerySection />
+            <WaveSeparator flipX />
+            
+            <FadeInSection>
+              <GallerySection />
+            </FadeInSection>
+            
+            <WaveSeparator />
 
-            <BookingContactSection
-              preselectedActivity="surf"
-              inquiryNote={inquiryNote}
-            />
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity="surf"
+                inquiryNote={inquiryNote}
+              />
+            </FadeInSection>
           </div>
         )}
 
@@ -176,18 +216,29 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <WaveSeparator />
 
-            <PadelSection
-              onOpenBookingModal={handleOpenBookingModal}
-              onOpenBudgetModal={handleOpenBudgetModal}
-            />
+            <FadeInSection>
+              <PadelSection
+                onOpenBookingModal={handleOpenBookingModal}
+                onOpenBudgetModal={handleOpenBudgetModal}
+              />
+            </FadeInSection>
 
-            <PadelTournamentSchedule onOpenBookingModal={handleOpenBookingModal} />
+            <WaveSeparator flipX />
+            
+            <FadeInSection>
+              <PadelTournamentSchedule onOpenBookingModal={handleOpenBookingModal} />
+            </FadeInSection>
+            
+            <WaveSeparator />
 
-            <BookingContactSection
-              preselectedActivity="padel"
-              inquiryNote={inquiryNote}
-            />
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity="padel"
+                inquiryNote={inquiryNote}
+              />
+            </FadeInSection>
           </div>
         )}
 
@@ -202,17 +253,24 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <WaveSeparator />
 
-            <BootCampSection
-              bootCampDetails={bootCampDetails}
-              onOpenBookingModal={handleOpenBookingModal}
-              onOpenEditModal={() => setEditModalOpen(true)}
-            />
+            <FadeInSection>
+              <BootCampSection
+                bootCampDetails={bootCampDetails}
+                onOpenBookingModal={handleOpenBookingModal}
+                onOpenEditModal={() => setEditModalOpen(true)}
+              />
+            </FadeInSection>
+            
+            <WaveSeparator />
 
-            <BookingContactSection
-              preselectedActivity="surf-bootcamp"
-              inquiryNote={inquiryNote}
-            />
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity="surf-bootcamp"
+                inquiryNote={inquiryNote}
+              />
+            </FadeInSection>
           </div>
         )}
 
@@ -227,17 +285,29 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <WaveSeparator />
 
-            <AboutSergioCosta
-              bio={bio}
-              onOpenEditModal={() => setEditModalOpen(true)}
-            />
+            <FadeInSection>
+              <AboutSergioCosta
+                bio={bio}
+                onOpenEditModal={() => setEditModalOpen(true)}
+              />
+            </FadeInSection>
 
-            <TestimonialsSection />
+            <WaveSeparator flipX />
+            
+            <FadeInSection>
+              <TestimonialsSection />
+            </FadeInSection>
+            
+            <WaveSeparator />
 
-            <BookingContactSection
-              inquiryNote={inquiryNote}
-            />
+            <FadeInSection>
+              <BookingContactSection
+                inquiryNote={inquiryNote}
+                showFaq={true}
+              />
+            </FadeInSection>
           </div>
         )}
 
@@ -252,13 +322,20 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <WaveSeparator />
 
-            <TeamBuildingSection onOpenBookingModal={handleOpenBookingModal} />
+            <FadeInSection>
+              <TeamBuildingSection onOpenBookingModal={handleOpenBookingModal} />
+            </FadeInSection>
+            
+            <WaveSeparator />
 
-            <BookingContactSection
-              preselectedActivity="teambuilding"
-              inquiryNote={inquiryNote}
-            />
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity="teambuilding"
+                inquiryNote={inquiryNote}
+              />
+            </FadeInSection>
           </div>
         )}
 
@@ -273,11 +350,15 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <WaveSeparator />
 
-            <BookingContactSection
-              preselectedActivity={selectedActivity as ActivityType | undefined}
-              inquiryNote={inquiryNote}
-            />
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity={selectedActivity as ActivityType | undefined}
+                inquiryNote={inquiryNote}
+                showFaq={true}
+              />
+            </FadeInSection>
           </div>
         )}
       </main>

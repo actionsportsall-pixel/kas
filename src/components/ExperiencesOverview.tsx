@@ -144,8 +144,10 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
                 <div className={`pt-5 border-t flex items-center justify-between ${isSignature ? 'border-white/15' : 'border-[#73999C]/20'}`}>
                   <button
                     onClick={() => handleNavigatePage(col.pageId)}
-                    className={`text-xs font-bold uppercase tracking-wider flex items-center gap-2 py-1 transition-all ${
-                      isSignature ? 'text-[#A8C7C2] hover:text-white' : 'text-[#273334] hover:text-[#C96F4B]'
+                    className={`w-full py-2.5 px-4 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs ${
+                      isSignature
+                        ? 'bg-white text-[#273334] hover:bg-[#F7F4EE] hover:text-[#C96F4B]'
+                        : 'bg-[#73999C] hover:bg-[#5D8184] text-white'
                     }`}
                   >
                     <span>{t('Ver Experiência', 'View Experience', 'Erlebnis ansehen')}</span>

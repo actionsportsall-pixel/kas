@@ -61,7 +61,7 @@ export const PadelSection: React.FC<PadelSectionProps> = ({
               <div className="pt-5 mt-4 border-t border-[#2B2F33]/10 relative z-10">
                 <button
                   onClick={() => onOpenBookingModal(service.activityKey)}
-                  className="w-full py-2.5 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs"
+                  className="w-full py-3 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shadow-[#C96F4B]/20 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>{t('Reservar esta experiência', 'Book this experience')}</span>
@@ -72,18 +72,18 @@ export const PadelSection: React.FC<PadelSectionProps> = ({
         </div>
 
         {/* Action Quick Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-3 p-4 bg-[#F3E7DB]/95 backdrop-blur-xs border border-[#2B2F33]/15 rounded-sm shadow-xs max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-3 p-4 bg-[#F7F4EE]/95 backdrop-blur-md border border-[#73999C]/25 rounded-2xl shadow-md max-w-4xl mx-auto">
           <button
             onClick={() => onOpenBudgetModal('Pedir orçamento geral de Padel')}
-            className="px-5 py-2.5 rounded-sm bg-[#2B2F33] text-white hover:bg-[#202326] font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs"
+            className="px-5 py-2.5 rounded-2xl bg-[#73999C]/15 hover:bg-[#73999C] hover:text-white text-[#273334] border border-[#73999C]/30 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs cursor-pointer"
           >
-            <MessageSquare className="w-4 h-4 text-[#A7CFC6]" />
+            <MessageSquare className="w-4 h-4" />
             <span>{t('Pedir orçamento', 'Request Quote', 'Angebot anfordern')}</span>
           </button>
 
           <button
             onClick={() => onOpenBookingModal('torneio_padel')}
-            className="px-5 py-2.5 rounded-sm bg-[#E07A5F] hover:bg-[#C96147] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs"
+            className="px-5 py-2.5 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-md shadow-[#C96F4B]/20 cursor-pointer"
           >
             <Trophy className="w-4 h-4" />
             <span>{t('Organizar torneio', 'Organize Tournament', 'Turnier organisieren')}</span>
@@ -91,7 +91,7 @@ export const PadelSection: React.FC<PadelSectionProps> = ({
 
           <button
             onClick={() => onOpenBookingModal('aula_padel')}
-            className="px-5 py-2.5 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs"
+            className="px-5 py-2.5 rounded-2xl bg-[#73999C] hover:bg-[#5D8184] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs cursor-pointer"
           >
             <Calendar className="w-4 h-4" />
             <span>{t('Marcar aula', 'Book Lesson', 'Stunde buchen')}</span>

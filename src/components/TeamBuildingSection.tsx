@@ -44,11 +44,11 @@ export const TeamBuildingSection: React.FC<TeamBuildingProps> = ({
               {/* Benefits Checklist */}
               <div className="space-y-2 pt-2">
                 {benefits.map((b, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3 bg-[#F3E7DB] border border-[#2B2F33]/15 rounded-sm shadow-sm">
-                    <CheckCircle2 className="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-3 p-3.5 bg-[#E4CEAD]/20 border border-[#73999C]/20 rounded-2xl shadow-xs">
+                    <CheckCircle2 className="w-4 h-4 text-[#C96F4B] shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-xs font-bold text-[#2B2F33] uppercase tracking-wider">{b.title}</h4>
-                      <p className="text-xs text-[#2B2F33]/70">{b.desc}</p>
+                      <h4 className="text-xs font-bold text-[#273334] uppercase tracking-wider">{b.title}</h4>
+                      <p className="text-xs text-[#273334]/70">{b.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -59,7 +59,7 @@ export const TeamBuildingSection: React.FC<TeamBuildingProps> = ({
               <button
                 onClick={() => onOpenBookingModal('team_building')}
                 id="pedir-proposta-btn"
-                className="px-8 py-3.5 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-widest transition-all flex items-center gap-2"
+                className="px-8 py-3.5 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#C96F4B]/20 transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Send className="w-4 h-4" />
                 <span>{t('Pedir proposta personalizada', 'Request Custom Proposal', 'Maßgeschneidertes Angebot anfordern')}</span>
@@ -69,29 +69,29 @@ export const TeamBuildingSection: React.FC<TeamBuildingProps> = ({
 
           {/* Visual Showcase Card Column */}
           <div className="lg:col-span-5">
-            <div className="bg-[#F3E7DB] border border-[#2B2F33]/15 p-6 space-y-6 rounded-sm h-full flex flex-col justify-between shadow-sm">
-              <div className="aspect-[4/3] rounded-sm overflow-hidden relative">
+            <div className="bg-[#E4CEAD]/20 border border-[#73999C]/25 p-6 space-y-6 rounded-2xl h-full flex flex-col justify-between shadow-sm">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
                   alt="Team Building Action Sports"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2B2F33]/80 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 px-3 py-1 bg-[#2B2F33] text-xs font-bold text-[#A7CFC6] border border-white/10 uppercase tracking-wider flex items-center gap-1.5">
-                  <PartyPopper className="w-3.5 h-3.5 text-[#E07A5F]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#273334]/80 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 px-3.5 py-1.5 bg-[#273334]/90 backdrop-blur-md rounded-xl text-xs font-bold text-[#A8C7C2] border border-white/10 uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
+                  <PartyPopper className="w-3.5 h-3.5 text-[#C96F4B]" />
                   <span>{t('Celebrar & Conectar', 'Celebrate & Connect', 'Feiern & Verbinden')}</span>
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-center">
-                <div className="p-4 bg-[#F8F6F0] rounded-sm border border-[#2B2F33]/10">
-                  <p className="font-display text-3xl text-[#2B2F33]">+ 10</p>
-                  <p className="text-[10px] uppercase font-bold tracking-wider text-[#6B4F3A]">{t('Participantes', 'Participants')}</p>
+                <div className="p-4 bg-[#F7F4EE] rounded-2xl border border-[#73999C]/20">
+                  <p className="font-display text-3xl text-[#273334]">+ 10</p>
+                  <p className="text-[10px] uppercase font-bold tracking-wider text-[#73999C]">{t('Participantes', 'Participants')}</p>
                 </div>
-                <div className="p-4 bg-[#F8F6F0] rounded-sm border border-[#2B2F33]/10">
-                  <p className="font-display text-3xl text-[#2B2F33]">SURF & PADEL</p>
-                  <p className="text-[10px] uppercase font-bold tracking-wider text-[#6B4F3A]">{t('Modalidades', 'Sports')}</p>
+                <div className="p-4 bg-[#F7F4EE] rounded-2xl border border-[#73999C]/20">
+                  <p className="font-display text-3xl text-[#273334]">SURF & PADEL</p>
+                  <p className="text-[10px] uppercase font-bold tracking-wider text-[#73999C]">{t('Modalidades', 'Sports')}</p>
                 </div>
               </div>
             </div>

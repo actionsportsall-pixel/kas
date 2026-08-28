@@ -64,15 +64,15 @@ export const SurfSection: React.FC<SurfSectionProps> = ({
               <div className="pt-5 grid grid-cols-2 gap-2.5 mt-4 border-t border-[#2B2F33]/10">
                 <button
                   onClick={() => onOpenInquiry(service.title)}
-                  className="w-full py-2 px-2.5 rounded-sm bg-[#2B2F33] text-white hover:bg-[#202326] font-bold text-[11px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1"
+                  className="w-full py-2.5 px-3 rounded-2xl bg-[#73999C]/15 hover:bg-[#73999C] text-[#273334] hover:text-white border border-[#73999C]/30 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-[#A7CFC6]" />
+                  <MessageCircle className="w-3.5 h-3.5" />
                   <span>{t('Info', 'Info')}</span>
                 </button>
 
                 <button
                   onClick={() => onOpenBookingModal(service.activityKey)}
-                  className="w-full py-2 px-2.5 rounded-sm bg-[#E07A5F] hover:bg-[#D0684D] text-white font-bold text-[11px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1 shadow-sm"
+                  className="w-full py-2.5 px-3 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-md shadow-[#C96F4B]/20 cursor-pointer"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>{t('Reservar', 'Book')}</span>

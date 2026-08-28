@@ -153,18 +153,18 @@ export const PadelTournamentSchedule: React.FC<TournamentScheduleProps> = ({
         </div>
 
         {/* CTA Button Box */}
-        <div className="mt-16 text-center p-8 bg-[#F3E7DB] border border-[#2B2F33]/20 rounded-sm shadow-md flex flex-col items-center justify-center space-y-4">
-          <h3 className="font-display text-3xl sm:text-4xl text-[#2B2F33] uppercase tracking-wider">
-            {t('QUERES ORGANIZAR UM TORNEIO COM ESTA ESTRUTURA PERFECTA?', 'WANT TO ORGANIZE A TOURNAMENT WITH THIS PERFECT STRUCTURE?', 'MÖCHTEN SIE EIN TURNIER MIT DIESER PERFEKTEN STRUKTUR ORGANISIEREN?')}
+        <div className="mt-16 text-center p-8 bg-[#E4CEAD]/25 border border-[#73999C]/25 rounded-2xl shadow-md flex flex-col items-center justify-center space-y-4">
+          <h3 className="font-display text-3xl sm:text-4xl text-[#273334] uppercase tracking-wider">
+            {t('QUERES ORGANIZAR UM TORNEIO COM ESTA ESTRUTURA PERFEITA?', 'WANT TO ORGANIZE A TOURNAMENT WITH THIS PERFECT STRUCTURE?', 'MÖCHTEN SIE EIN TURNIER MIT DIESER PERFEKTEN STRUKTUR ORGANISIEREN?')}
           </h3>
-          <p className="text-[#2B2F33]/80 max-w-xl text-xs sm:text-sm">
-            {t('Ideal para empresas, grupos de amigos ou celebrações. A Action Sports trata de toda a logística, sorteio, arbitragem e materiais.', 'Ideal for companies, groups of friends, or celebrations. Action Sports takes care of all logistics, draw, refereeing, and equipment.', 'Ideal für Unternehmen, Freundesgruppen oder Feiern. Action Sports kümmert sich um die gesamte Logistik, Auslosung, Schiedsrichter und Ausrüstung.')}
+          <p className="text-[#273334]/80 max-w-xl text-xs sm:text-sm">
+            {t('Ideal para empresas, grupos de amigos ou celebrações. A KAS trata de toda a logística, sorteio, arbitragem e materiais.', 'Ideal for companies, groups of friends, or celebrations. KAS takes care of all logistics, draw, refereeing, and equipment.', 'Ideal für Unternehmen, Freundesgruppen oder Feiern. KAS kümmert sich um die gesamte Logistik, Auslosung, Schiedsrichter und Ausrüstung.')}
           </p>
 
           <button
             onClick={() => onOpenBookingModal('torneio_padel')}
             id="organizar-torneio-btn"
-            className="px-8 py-3.5 rounded-sm bg-[#A7CFC6] hover:bg-[#8DBEB4] text-[#2B2F33] font-bold text-xs uppercase tracking-widest transition-all flex items-center gap-2"
+            className="px-8 py-3.5 rounded-2xl bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#C96F4B]/20 transition-all flex items-center gap-2 cursor-pointer"
           >
             <Trophy className="w-4 h-4" />
             <span>{t('Organizar este torneio', 'Organize this tournament', 'Dieses Turnier organisieren')}</span>
