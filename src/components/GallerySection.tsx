@@ -47,10 +47,10 @@ export const GallerySection: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-sm ${
+              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-2xl flex items-center justify-center ${
                 activeCategory === cat.id
-                  ? 'bg-[#A7CFC6] text-[#2B2F33]'
-                  : 'bg-[#F3E7DB] text-[#2B2F33] border border-[#2B2F33]/15 hover:bg-[#EFE6DC]'
+                  ? 'bg-[#73999C] text-white border-b-2 border-[#C96F4B] shadow-xs'
+                  : 'bg-[#73999C]/15 text-[#273334] border border-[#73999C]/25 hover:bg-[#73999C] hover:text-white'
               }`}
             >
               {cat.label}

@@ -7,7 +7,20 @@ export const IntroSection: React.FC = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section id="apresentacao" className="py-16 sm:py-24 bg-[#F7F4EE] relative overflow-hidden border-b border-[#73999C]/15">
+    <section id="apresentacao" className="pt-2 sm:pt-4 pb-16 sm:pb-24 bg-[#F7F4EE] relative overflow-hidden border-b border-[#73999C]/15">
+      {/* Decorative Separator above Metodologia Exclusiva */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8 sm:mb-10">
+        <div className="flex items-center justify-center gap-4">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#73999C]/30 to-[#C96F4B]/50" />
+          <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#E4CEAD]/30 border border-[#73999C]/20 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C96F4B]" />
+            <Compass className="w-4 h-4 text-[#73999C]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#73999C]" />
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#73999C]/30 to-[#C96F4B]/50" />
+        </div>
+      </div>
+
       {/* O Método KAS Section — Right after As Nossas Coleções */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-16 sm:mb-20">
         <div className="space-y-12">
@@ -74,8 +87,21 @@ export const IntroSection: React.FC = () => {
         </div>
       </div>
 
+      {/* Decorative Separator above Beyond Sport */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
+        <div className="flex items-center justify-center gap-4">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#73999C]/30 to-[#C96F4B]/50" />
+          <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#E4CEAD]/30 border border-[#73999C]/20 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C96F4B]" />
+            <Sparkles className="w-4 h-4 text-[#C96F4B]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#73999C]" />
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#73999C]/30 to-[#C96F4B]/50" />
+        </div>
+      </div>
+
       {/* Main Manifesto Container — BEYOND SPORT */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10 border-t border-[#73999C]/15 text-center space-y-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
         <h2 className="font-display text-4xl sm:text-6xl text-[#273334] tracking-wide uppercase leading-tight">
           BEYOND SPORT <br />
           <span className="text-[#C96F4B]">BEYOND EXPECTATIONS</span>

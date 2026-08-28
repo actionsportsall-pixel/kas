@@ -110,9 +110,9 @@ export default function App() {
               onNavigate={handleNavigate}
             />
             <IntroSection />
+            <GallerySection />
             <ComingSoonSection />
             <TestimonialsSection />
-            <GallerySection />
             
             {/* Quick Contact CTA Section on Home */}
             <section className="py-16 bg-[#73999C] text-white border-t border-[#73999C]/20 text-center px-4">
@@ -142,11 +142,8 @@ export default function App() {
         {/* PAGE 2: SURF EXPERIENCES */}
         {currentPage === 'surf' && (
           <div className="animate-in fade-in duration-300">
-            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
               <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                  <span>Página Dedicada • Surf</span>
-                </div>
                 <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">SURF EXPERIENCES</h1>
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Aulas individuais, cursos de grupo, rentals de material de alta performance e surf guide personalizado nos melhores spots de Portugal.
@@ -171,11 +168,8 @@ export default function App() {
         {/* PAGE 3: PADEL EXPERIENCES */}
         {currentPage === 'padel' && (
           <div className="animate-in fade-in duration-300">
-            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
               <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                  <span>Página Dedicada • Padel</span>
-                </div>
                 <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">PADEL EXPERIENCES</h1>
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Aulas de aperfeiçoamento técnico, jogos treinados e a gestão completa de torneios dinâmicos com cronograma otimizado de 2 horas.
@@ -200,11 +194,8 @@ export default function App() {
         {/* PAGE 4: SURF BOOT CAMP */}
         {currentPage === 'bootcamp' && (
           <div className="animate-in fade-in duration-300">
-            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
               <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                  <span>Programa de Imersão Intensiva • 5 Dias</span>
-                </div>
                 <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">SURF BOOT CAMP</h1>
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Combina sessões diárias de surf, vídeo análise técnica, SurfSkate e treino funcional com o acompanhamento direto de Sérgio Costa.
@@ -228,13 +219,10 @@ export default function App() {
         {/* PAGE 5: SOBRE SÉRGIO COSTA */}
         {currentPage === 'sobre' && (
           <div className="animate-in fade-in duration-300">
-            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
-              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                  <span>Marca & Liderança</span>
-                </div>
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-4 relative z-10">
                 <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">SOBRE A KAS</h1>
-                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
                   Beyond Sport. Beyond Expectations. Conheça a história, visão e a liderança da equipa KAS na criação de experiências outdoor memoráveis.
                 </p>
               </div>
@@ -256,11 +244,8 @@ export default function App() {
         {/* PAGE 6: TEAM BUILDING */}
         {currentPage === 'teambuilding' && (
           <div className="animate-in fade-in duration-300">
-            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
               <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                  <span>Empresas & Eventos Especiais</span>
-                </div>
                 <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">TEAM BUILDING</h1>
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Organizamos atividades de surf e padel para empresas, equipas, grupos de amigos, aniversários e eventos privados. Cada programa pode ser personalizado de acordo com o número de participantes, duração, objetivos e nível de experiência.
@@ -280,11 +265,8 @@ export default function App() {
         {/* PAGE 7: CONTACTOS */}
         {currentPage === 'contactos' && (
           <div className="animate-in fade-in duration-300">
-            <div className="pt-28 pb-10 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
               <div className="max-w-4xl mx-auto space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 border border-white/25 rounded-full text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                  <span>Fale Connosco</span>
-                </div>
                 <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">CONTACTOS</h1>
                 <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
                   Envie-nos a sua mensagem ou pedido. Respondemos rapidamente para esclarecer todas as dúvidas.

@@ -147,10 +147,6 @@ export const FAQSection: React.FC = () => {
     <div id="faq-section" className="pt-12 border-t border-[#73999C]/20 space-y-8">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#E4CEAD]/40 border border-[#73999C]/20 text-[#73999C] text-[11px] font-bold uppercase tracking-[0.2em] rounded-full">
-          <HelpCircle className="w-3.5 h-3.5 text-[#C96F4B]" />
-          <span>{t('DÚVIDAS FREQUENTES', 'FREQUENTLY ASKED QUESTIONS', 'HÄUFIG GESTELLTE FRAGEN')}</span>
-        </div>
         <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#273334] uppercase tracking-wider">
           {t('PERGUNTAS', 'FREQUENT', 'HÄUFIGE')} <span className="text-[#C96F4B]">{t('FREQUENTES', 'QUESTIONS', 'FRAGEN')}</span>
         </h3>

@@ -136,24 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             {/* Dropdown Menu Box with seamless pt-1.5 top padding container to prevent mouseLeave flicker */}
             {dropdownOpen && (
               <div className="absolute top-full left-0 pt-1.5 w-64 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                <div className="bg-[#F7F4EE] border border-[#73999C]/30 rounded-2xl shadow-2xl py-2 overflow-hidden">
-                  <div className="px-3.5 py-1.5 text-[10px] font-bold text-[#73999C] uppercase tracking-widest border-b border-[#73999C]/15">
-                    <span>{t('Experiências KAS', 'KAS Experiences', 'KAS-Erlebnisse')}</span>
-                  </div>
-
-                  {/* Main Overview Link */}
-                  <a
-                    href="#experiencias"
-                    onClick={(e) => handleNavClick(e, 'experiencias')}
-                    className="px-3.5 py-2 text-xs font-bold uppercase tracking-wider flex items-center justify-between text-[#C96F4B] hover:bg-[#C96F4B]/10 border-b border-[#73999C]/15 transition-colors"
-                  >
-                    <div className="flex flex-col leading-tight">
-                      <span>{t('Visão Geral das Experiências', 'All Experiences Overview', 'Erlebnisübersicht')}</span>
-                      <span className="text-[9px] text-[#273334]/70 font-normal normal-case">Ver todas as modalidades</span>
-                    </div>
-                    <span className="text-[#C96F4B] text-xs">→</span>
-                  </a>
-
+                <div className="bg-[#F7F4EE] border border-[#73999C]/30 rounded-2xl shadow-2xl py-1.5 overflow-hidden divide-y divide-[#73999C]/10">
                   {experienceLinks.map((item) => {
                     const isActive = currentPage === item.id;
                     return (
@@ -326,22 +309,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             </a>
 
             {/* Mobile Experiences Group */}
-            <div className="pt-2 pb-1 space-y-1.5 bg-[#73999C]/10 rounded-2xl p-2.5 border border-[#73999C]/20">
-              <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-[#73999C] flex items-center justify-between">
-                <span>{t('EXPERIÊNCIAS', 'EXPERIENCES')}</span>
-                <span className="text-[#C96F4B]">KAS</span>
-              </div>
-
-              {/* All Experiences Link */}
-              <a
-                href="#experiencias"
-                onClick={(e) => handleNavClick(e, 'experiencias')}
-                className="px-3 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest bg-[#C96F4B] text-white flex items-center justify-between shadow-xs"
-              >
-                <span>{t('Todas as Experiências', 'All Experiences')}</span>
-                <span>→</span>
-              </a>
-
+            <div className="space-y-1.5 bg-[#73999C]/10 rounded-2xl p-2.5 border border-[#73999C]/20">
               {experienceLinks.map((link) => {
                 const isActive = currentPage === link.id;
                 return (

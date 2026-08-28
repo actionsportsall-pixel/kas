@@ -90,12 +90,9 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
   };
 
   return (
-    <section id="experiencias" className="py-24 bg-[#F7F4EE] text-[#273334] border-b border-[#73999C]/15">
+    <section id="experiencias" className="pt-8 sm:pt-12 pb-10 sm:pb-12 bg-[#F7F4EE] text-[#273334]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#E4CEAD]/40 border border-[#73999C]/20 text-[#73999C] text-[11px] font-bold uppercase tracking-[0.2em] rounded-full">
-            <span>{t('EXPERIÊNCIAS EXCLUSIVAS KAS', 'EXCLUSIVE KAS EXPERIENCES', 'EXKLUSIVE KAS-ERLEBNISSE')}</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-2">
           <h2 className="font-display text-4xl sm:text-6xl text-[#273334] tracking-wide uppercase">
             {t('AS NOSSAS', 'OUR', 'UNSERE')} <span className="text-[#C96F4B]">{t('EXPERIÊNCIAS', 'EXPERIENCES', 'ERLEBNISSE')}</span>
           </h2>

@@ -11,11 +11,6 @@ export const TestimonialsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#E4CEAD]/50 border border-[#73999C]/20 text-[#73999C] text-[11px] font-bold uppercase tracking-[0.2em] rounded-full">
-            <Quote className="w-3.5 h-3.5 text-[#C96F4B]" />
-            <span>{t('OPINIÃO DE QUEM JÁ EXPERIMENTOU', 'REVIEWS FROM OUR GUESTS', 'ERFAHRUNGEN UNSERER GÄSTE')}</span>
-          </div>
-
           <h2 className="font-display text-5xl sm:text-6xl text-[#273334] tracking-wide uppercase">
             {t('AVALIAÇÕES &', 'REVIEWS &', 'BEWERTUNGEN &')} <span className="text-[#C96F4B]">{t('TESTEMUNHOS', 'TESTIMONIALS', 'ERFAHRUNGSBERICHTE')}</span>
           </h2>
