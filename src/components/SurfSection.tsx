@@ -3,7 +3,7 @@ import { SURF_SERVICES } from '../data/mockData';
 import { CheckCircle2, MessageCircle, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const surfActionImg = '/images/surf_action_spray_1787585994752.jpg';
+const surfActionImg = '/images/surf_viagem.jpg';
 
 interface SurfSectionProps {
   onOpenBookingModal: (activityKey?: string) => void;
@@ -23,6 +23,7 @@ export const SurfSection: React.FC<SurfSectionProps> = ({
         <img
           src={surfActionImg}
           alt="Surf Action Background"
+          referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center"
         />
         {/* Semi-transparent soft tone overlay to ensure excellent readability of the 6 cards */}
