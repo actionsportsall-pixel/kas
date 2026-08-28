@@ -3,7 +3,7 @@ import { PADEL_SERVICES } from '../data/mockData';
 import { Trophy, CheckCircle2, MessageSquare, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const padelActionImg = '/images/padel_outdoor_match_1787586288036.jpg';
+const padelActionImg = '/images/padel-1.JPG';
 
 interface PadelSectionProps {
   onOpenBookingModal: (activityKey?: string) => void;
