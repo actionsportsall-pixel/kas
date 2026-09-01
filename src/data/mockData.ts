@@ -13,8 +13,13 @@ export const HERO_IMAGE = '/images/surf.png';
 export const SERGIO_PORTRAIT = '/images/sergio.jpeg';
 export const PADEL_ACTION_IMAGE = '/images/padel-1.JPG';
 export const SURF_BOOTCAMP_IMAGE = '/images/surftrip group .JPG';
+export const SURF_TRIP_IMAGE = '/images/surftrip goup 2.jpg';
 export const SURF_GROUP_EXPERIENCE_IMAGE = '/images/surf_group_experience_1787149621419.jpg';
-export const SUP_PADDLE_IMAGE = '/images/stand_up_paddle_kas_1787150261094.jpg';
+export const SUP_PADDLE_IMAGE = '/images/secret_spot_3.jpg';
+export const SECRET_SPOT_IMAGE = '/images/secret_spots.jpg';
+export const SECRET_SPOT_3_IMAGE = '/images/secret_spot_3.jpg';
+export const PRIVATE_SURF_IMAGE = '/images/privada 2 pessoas.JPG';
+export const SUNSET_IMAGE = '/images/por_do_sol.jpg';
 export const PRIVATE_SURF_SUNSET_IMAGE = '/images/por_do_sol.jpg';
 export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1Lcga3lFaORHgvOl0-BfV-gdReDnfCPVhr1JxBnl1z0M/edit';
 
@@ -106,7 +111,7 @@ export const SURF_SERVICES: ServiceCardItem[] = [
     title: 'Experiências Privadas & Exclusivas',
     description:
       'Sessões individuais e personalizadas, adaptadas ao nível, ritmo e objetivos de cada participante. Evolução acelerada com foco total e atendimento 1:1.',
-    image: PRIVATE_SURF_SUNSET_IMAGE,
+    image: PRIVATE_SURF_IMAGE,
     category: 'surf',
     activityKey: 'aula_privada_surf',
     tag: 'Experiência de Surf',
@@ -116,8 +121,8 @@ export const SURF_SERVICES: ServiceCardItem[] = [
     id: 'surf-guiding',
     title: 'Guia de Surf & Spots Secretos',
     description:
-      'Acompanhamento personalizado para descobrir os melhores picos de surf de Portugal, de acordo com as marés, vento e o teu nível de experiência.',
-    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80',
+      'Acompanhamento personalizado para descobrir as melhores ondas de Portugal, de acordo com as marés, vento e o teu nível de experiência.',
+    image: SECRET_SPOT_IMAGE,
     category: 'surf',
     activityKey: 'surf_guide',
     tag: 'Guia de Surf',
@@ -125,21 +130,21 @@ export const SURF_SERVICES: ServiceCardItem[] = [
   },
   {
     id: 'stand-up-paddle',
-    title: 'Stand Up Paddle (SUP)',
+    title: 'Locais Secretos',
     description:
-      'Passeios tranquilos de SUP em águas cristalinas. Uma experiência de equilíbrio, silêncio e ligação com o oceano.',
+      'Passeios e descoberta em locais secretos e águas costeiras preservadas. Uma experiência autêntica de silêncio e profunda ligação com o oceano.',
     image: SUP_PADDLE_IMAGE,
     category: 'surf',
     activityKey: 'outra_atividade',
-    tag: 'SUP',
-    highlights: ['Para todos os níveis', 'Material de segurança completo', 'Guia', 'Sob consulta'],
+    tag: 'Locais Secretos',
+    highlights: ['Ondas recônditas e autênticas', 'Guia e acompanhamento local', 'Material de segurança completo', 'Experiência personalizada'],
   },
   {
     id: 'sunset-sessions',
     title: 'Sessões ao Pôr do Sol',
     description:
       'Sessões exclusivas ao fim do dia no mar, combinando surf ou SUP sob as cores do pôr do sol, seguidas de momento de relaxamento e hospitalidade KAS.',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    image: SUNSET_IMAGE,
     category: 'surf',
     activityKey: 'outra_atividade',
     tag: 'Sessões ao Pôr do Sol',
@@ -166,6 +171,17 @@ export const SURF_SERVICES: ServiceCardItem[] = [
     activityKey: 'boot_camp',
     tag: 'Boot Camp',
     highlights: ['Imersão completa de 5 dias', 'Análise técnica de vídeo', 'Treino funcional', 'Experiência de grupo VIP'],
+  },
+  {
+    id: 'viagens-surf',
+    title: 'Viagens de Surf',
+    description:
+      'Água quente, sol e boas ondas. Expedições de surf inesquecíveis organizadas com todo o conforto, acompanhamento e orientação.',
+    image: SURF_TRIP_IMAGE,
+    category: 'surf',
+    activityKey: 'boot_camp',
+    tag: 'Viagens de Surf',
+    highlights: ['Água quente, sol e boas ondas', 'Guia e acompanhamento experiente', 'Logística e alojamento selecionado', 'Para todos os níveis'],
   },
 ];
 
@@ -394,7 +410,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'gal-1',
-    title: 'Ocean Experience — Surf Privado ao Pôr do Sol',
+    title: 'Surf Privado ao Pôr do Sol',
     category: 'surf',
     type: 'image',
     src: PRIVATE_SURF_SUNSET_IMAGE,
@@ -434,10 +450,18 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-6',
-    title: 'Ocean Experience — Stand Up Paddle',
+    title: 'Locais Secretos',
     category: 'surf',
     type: 'image',
     src: SUP_PADDLE_IMAGE,
-    caption: 'Descoberta em águas serenas com prancha de Stand Up Paddle.',
+    caption: 'Descoberta de ondas autênticas e locais secretos da costa portuguesa.',
+  },
+  {
+    id: 'gal-7',
+    title: 'Viagens de Surf',
+    category: 'surf',
+    type: 'image',
+    src: SURF_TRIP_IMAGE,
+    caption: 'Água quente, sol e boas ondas.',
   },
 ];

@@ -26,7 +26,7 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
       items: [
         t('Experiências de Surf', 'Surf Experiences', 'Surf-Erlebnisse'),
         t('Guia de Surf', 'Surf Guiding', 'Surf-Guiding'),
-        'Stand Up Paddle',
+        t('Locais Secretos', 'Secret Spots', 'Geheime Orte'),
         t('Sessões ao Pôr do Sol', 'Sunset Sessions', 'Sunset Sessions'),
         t('Semanas Intensas de Surf', 'Intense Surf Weeks', 'Intensive Surf-Wochen'),
       ],
