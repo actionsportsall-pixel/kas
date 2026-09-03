@@ -25,6 +25,7 @@ export const TOURS_NORTE_IMAGE = '/images/tours_norte_douro_guimaraes_sq.jpg';
 export const CANYONING_IMAGE = '/images/canyoning_geres_composite.jpg';
 export const CANYONING_CASCATA_IMAGE = '/images/canyoning_geres_cascata.jpg';
 export const CANYONING_RIO_IMAGE = '/images/canyoning_geres_rio.jpg';
+export const BIKE_MTB_IMAGE = '/images/bike_mtb.jpg';
 export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1Lcga3lFaORHgvOl0-BfV-gdReDnfCPVhr1JxBnl1z0M/edit';
 
 // KAS Brand Text Constants
@@ -340,7 +341,7 @@ export const FUTURE_SERVICES: FutureServiceItem[] = [
     description: 'Rotas de estrada e montanha pelas mais belas paisagens de Portugal com suporte total.',
     iconName: '',
     badge: '',
-    image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=800&q=80',
+    image: BIKE_MTB_IMAGE,
   },
   {
     id: 'moto-collection',
@@ -457,8 +458,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Passeios de Bicicleta',
     category: 'bike',
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80',
-    caption: 'A descoberta da costa sobre duas rodas com guias peritos.',
+    src: BIKE_MTB_IMAGE,
+    caption: 'A descoberta de trilhos e cenários naturais sobre duas rodas com guias peritos.',
   },
   {
     id: 'gal-8',

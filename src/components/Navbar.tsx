@@ -75,8 +75,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F7F4EE]/35 backdrop-blur-md border-b border-[#73999C]/20 py-3 shadow-xs'
-          : 'bg-[#F7F4EE]/25 backdrop-blur-md border-b border-[#73999C]/15 py-4 sm:py-4.5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[#73999C]/20 py-3 shadow-md shadow-black/5'
+          : 'bg-white/90 backdrop-blur-md border-b border-[#73999C]/15 py-3.5 sm:py-4 shadow-sm shadow-black/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -138,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             {/* Dropdown Menu Box with seamless pt-1.5 top padding container to prevent mouseLeave flicker */}
             {dropdownOpen && (
               <div className="absolute top-full left-0 pt-1.5 w-72 sm:w-80 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                <div className="bg-[#F7F4EE] border border-[#73999C]/30 rounded-2xl shadow-2xl py-1.5 overflow-hidden divide-y divide-[#73999C]/10">
+                <div className="bg-white border border-[#73999C]/30 rounded-2xl shadow-2xl py-1.5 overflow-hidden divide-y divide-[#73999C]/10">
                   {experienceLinks.map((item) => {
                     const isActive = currentPage === item.id;
                     return (
@@ -206,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             </button>
 
             {langDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-[#F7F4EE] backdrop-blur-md border border-[#73999C]/30 rounded-2xl shadow-lg py-1.5 z-50 overflow-hidden animate-in fade-in slide-in-from-top-1">
+              <div className="absolute right-0 mt-2 w-40 bg-white border border-[#73999C]/30 rounded-2xl shadow-lg py-1.5 z-50 overflow-hidden animate-in fade-in slide-in-from-top-1">
                 {languages.map((item) => (
                   <button
                     key={item.code}
@@ -254,7 +254,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             </button>
 
             {langDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-36 bg-[#F7F4EE] backdrop-blur-md border border-[#73999C]/30 rounded-xl shadow-lg py-1 z-50 overflow-hidden">
+              <div className="absolute right-0 mt-2 w-36 bg-white border border-[#73999C]/30 rounded-xl shadow-lg py-1 z-50 overflow-hidden">
                 {languages.map((item) => (
                   <button
                     key={item.code}
@@ -285,7 +285,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-[#E4CEAD]/40 text-[#273334] border border-[#73999C]/20 focus:outline-none"
+            className="p-2.5 rounded-xl bg-gray-100 text-[#273334] border border-[#73999C]/20 focus:outline-none"
             aria-label="Alternar Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -295,7 +295,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#F7F4EE] border-b border-[#73999C]/20 px-4 pt-4 pb-6 space-y-3 animate-in slide-in-from-top duration-200">
+        <div className="lg:hidden bg-white border-b border-[#73999C]/20 px-4 pt-4 pb-6 space-y-3 animate-in slide-in-from-top duration-200 shadow-xl">
           <div className="flex flex-col space-y-1">
             <a
               href="#inicio"
