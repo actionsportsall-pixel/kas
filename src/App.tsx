@@ -10,6 +10,7 @@ import { PadelTournamentSchedule } from './components/PadelTournamentSchedule';
 import { AboutSergioCosta } from './components/AboutSergioCosta';
 import { TeamBuildingSection } from './components/TeamBuildingSection';
 import { ToursSection } from './components/ToursSection';
+import { CanyoningSection } from './components/CanyoningSection';
 import { ComingSoonSection } from './components/ComingSoonSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { GallerySection } from './components/GallerySection';
@@ -23,8 +24,10 @@ import { FadeInSection } from './components/FadeInSection';
 import { INITIAL_BOOTCAMP_DETAILS, SERGIO_BIO, GOOGLE_BOOKING_FORM_URL } from './data/mockData';
 import { ActivityType } from './types';
 import { Compass } from 'lucide-react';
+import { useLanguage } from './context/LanguageContext';
 
 export default function App() {
+  const { t } = useLanguage();
   const [currentPage, setCurrentPage] = useState<string>('inicio');
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState<string | undefined>();
@@ -64,7 +67,7 @@ export default function App() {
           const el = document.getElementById('experiencias');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 100);
-      } else if (['inicio', 'surf', 'padel', 'bootcamp', 'sobre', 'teambuilding', 'contactos', 'tours'].includes(hash)) {
+      } else if (['inicio', 'surf', 'padel', 'canyoning', 'bootcamp', 'sobre', 'teambuilding', 'contactos', 'tours'].includes(hash)) {
         setCurrentPage(hash);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -373,7 +376,44 @@ export default function App() {
           </div>
         )}
 
-        {/* PAGE 8: CONTACTOS */}
+        {/* PAGE 8: CANYONING TOURS */}
+        {currentPage === 'canyoning' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">
+                  CANYONING TOURS
+                </h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  {t(
+                    'Parque Nacional da Peneda-Gerês: desça rios cristalinos, mergulhe em lagoas naturais e explore cascatas perdidas com total segurança.',
+                    'Peneda-Gerês National Park: descend crystal-clear rivers, dive into natural pools, and explore hidden waterfalls in complete safety.',
+                    'Nationalpark Peneda-Gerês: Entdecken Sie kristallklare Flüsse, Naturpools und verborgene Wasserfälle mit maximaler Sicherheit.'
+                  )}
+                </p>
+              </div>
+            </div>
+            <WaveSeparator />
+
+            <FadeInSection>
+              <CanyoningSection
+                onOpenBookingModal={handleOpenBookingModal}
+                onOpenBudgetModal={handleOpenBudgetModal}
+              />
+            </FadeInSection>
+            
+            <WaveSeparator />
+
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity="surf"
+                inquiryNote={inquiryNote || 'Canyoning Tours Gerês'}
+              />
+            </FadeInSection>
+          </div>
+        )}
+
+        {/* PAGE 9: CONTACTOS */}
         {currentPage === 'contactos' && (
           <div className="animate-in fade-in duration-300">
             <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">

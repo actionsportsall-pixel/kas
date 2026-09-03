@@ -40,6 +40,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       case 'teambuilding':
       case 'team_building':
         return 'team_building';
+      case 'canyoning':
+      case 'canyoning_geres':
+        return 'canyoning';
+      case 'tours':
+      case 'tours_norte':
+        return 'tours_norte';
       default:
         return 'aula_privada_surf';
     }
@@ -138,6 +144,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   <option value="boot_camp">{t('Surf Boot Camp', 'Surf Boot Camp', 'Surf Boot Camp')}</option>
                   <option value="aula_padel">{t('Aula de Padel', 'Padel Lesson', 'Padelstunde')}</option>
                   <option value="torneio_padel">{t('Torneio de Padel', 'Padel Tournament', 'Padelturnier')}</option>
+                  <option value="canyoning">{t('Canyoning Tours (Gerês)', 'Canyoning Tours (Gerês)', 'Canyoning-Touren (Gerês)')}</option>
+                  <option value="tours_norte">{t('Tours Norte Litoral & Interior', 'North Tours Coast & Inland', 'Nord-Touren Küste & Inland')}</option>
                   <option value="team_building">{t('Team Building', 'Team Building', 'Teambuilding')}</option>
                   <option value="outra_atividade">{t('Outra Atividade', 'Other Activity', 'Andere Aktivität')}</option>
                 </select>

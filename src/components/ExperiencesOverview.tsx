@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Waves, Trophy, Compass, Sparkles } from 'lucide-react';
+import { ArrowRight, Waves, Trophy, Compass, Sparkles, Mountain } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface OverviewProps {
@@ -58,6 +58,31 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
       themeText: 'text-[#273334]',
       accentColor: 'text-[#73999C]',
       badgeBg: 'bg-[#E4CEAD] text-[#273334]',
+      dotColor: 'bg-[#C96F4B]',
+    },
+    {
+      id: 'canyoning',
+      pageId: 'canyoning',
+      title: 'CANYONING TOURS',
+      subtitle: t('Peneda-Gerês & Cascatas', 'Peneda-Gerês & Waterfalls', 'Peneda-Gerês & Wasserfälle'),
+      description: t(
+        'O Canyoning é uma experiência de natureza e de aventura que te permite descobrir as maravilhosas paisagens e cascatas perdidas em pleno Parque Nacional da Peneda-Gerês.',
+        'Canyoning is a nature and adventure experience that allows you to discover the stunning landscapes and hidden waterfalls in the heart of Peneda-Gerês National Park.',
+        'Canyoning ist ein Natur- und Abenteuererlebnis, mit dem Sie die wunderbaren Landschaften und verborgenen Wasserfälle mitten im Nationalpark Peneda-Gerês entdecken können.'
+      ),
+      icon: Mountain,
+      tag: t('Gerês & Aventura', 'Gerês & Adventure', 'Gerês & Abenteuer'),
+      items: [
+        t('Nível Físico: Baixo / Médio', 'Physical: Low / Medium', 'Fitness: Leicht / Mittel'),
+        t('Dificuldade Técnica: Fácil', 'Technical: Easy', 'Schwierigkeit: Einfach'),
+        t('Equipamento Topo de Gama', 'Top-tier Equipment', 'Erstklassige Ausrüstung'),
+        t('Guias Certificados pela ICA', 'ICA Certified Guides', 'ICA-zertifizierte Guides'),
+        t('Fotos & Vídeos Grátis', 'Free Photos & Videos', 'Gratis Fotos & Videos'),
+      ],
+      themeBg: 'bg-[#73999C]/15 border-[#73999C]/35',
+      themeText: 'text-[#273334]',
+      accentColor: 'text-[#C96F4B]',
+      badgeBg: 'bg-[#73999C] text-white',
       dotColor: 'bg-[#C96F4B]',
     },
     {
@@ -130,8 +155,8 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
           </p>
         </div>
 
-        {/* 4 Collections Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        {/* 5 Collections Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {collections.map((col) => {
             const Icon = col.icon;
             const isSignature = col.id === 'signature';

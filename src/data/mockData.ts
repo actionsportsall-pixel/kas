@@ -22,6 +22,9 @@ export const PRIVATE_SURF_IMAGE = '/images/privada 2 pessoas.JPG';
 export const SUNSET_IMAGE = '/images/por_do_sol.jpg';
 export const PRIVATE_SURF_SUNSET_IMAGE = '/images/por_do_sol.jpg';
 export const TOURS_NORTE_IMAGE = '/images/tours_norte_douro_guimaraes_sq.jpg';
+export const CANYONING_IMAGE = '/images/canyoning_geres_composite.jpg';
+export const CANYONING_CASCATA_IMAGE = '/images/canyoning_geres_cascata.jpg';
+export const CANYONING_RIO_IMAGE = '/images/canyoning_geres_rio.jpg';
 export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1Lcga3lFaORHgvOl0-BfV-gdReDnfCPVhr1JxBnl1z0M/edit';
 
 // KAS Brand Text Constants

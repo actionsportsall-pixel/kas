@@ -8,6 +8,8 @@ export type ActivityType =
   | 'aula_padel'
   | 'torneio_padel'
   | 'team_building'
+  | 'canyoning'
+  | 'tours_norte'
   | 'outra_atividade';
 
 export interface ServiceCardItem {

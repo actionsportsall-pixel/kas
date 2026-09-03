@@ -56,6 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
   const experienceLinks = [
     { name: t('SURF', 'SURF', 'SURF'), id: 'surf', tag: t('Ocean & Guiding', 'Ocean & Guiding', 'Ozean & Guiding') },
     { name: t('PADEL', 'PADEL', 'PADEL'), id: 'padel', tag: t('Aulas & Torneios', 'Lessons & Tournaments', 'Kurse & Turniere') },
+    { name: t('CANYONING TOURS', 'CANYONING TOURS', 'CANYONING TOURS'), id: 'canyoning', tag: t('Peneda-Gerês & Cascatas', 'Peneda-Gerês & Waterfalls', 'Peneda-Gerês & Wasserfälle') },
     { name: t('BOOT CAMPS', 'BOOT CAMPS', 'BOOTCAMPS'), id: 'bootcamp', tag: t('Imersão & Treino', 'Immersion & Training', 'Immersion & Training') },
     { name: t('TEAM BUILDING', 'TEAM BUILDING', 'TEAMBUILDING'), id: 'teambuilding', tag: t('Retiros & Empresas', 'Retreats & Corporate', 'Retreats & Firmen') },
     { name: t('TOURS NORTE LITORAL & INTERIOR', 'NORTH TOURS COAST & INLAND', 'NORD-TOUREN KÜSTE & INLAND'), id: 'tours', tag: t('Porto, Douro, Guimarães & Minho', 'Porto, Douro, Guimarães & Minho', 'Porto, Douro, Guimarães & Minho') },
