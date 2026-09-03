@@ -9,6 +9,7 @@ import { PadelSection } from './components/PadelSection';
 import { PadelTournamentSchedule } from './components/PadelTournamentSchedule';
 import { AboutSergioCosta } from './components/AboutSergioCosta';
 import { TeamBuildingSection } from './components/TeamBuildingSection';
+import { ToursSection } from './components/ToursSection';
 import { ComingSoonSection } from './components/ComingSoonSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { GallerySection } from './components/GallerySection';
@@ -63,7 +64,7 @@ export default function App() {
           const el = document.getElementById('experiencias');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 100);
-      } else if (['inicio', 'surf', 'padel', 'bootcamp', 'sobre', 'teambuilding', 'contactos'].includes(hash)) {
+      } else if (['inicio', 'surf', 'padel', 'bootcamp', 'sobre', 'teambuilding', 'contactos', 'tours'].includes(hash)) {
         setCurrentPage(hash);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -339,7 +340,40 @@ export default function App() {
           </div>
         )}
 
-        {/* PAGE 7: CONTACTOS */}
+        {/* PAGE 7: TOURS NORTE LITORAL & INTERIOR */}
+        {currentPage === 'tours' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">
+              <div className="max-w-4xl mx-auto space-y-3 relative z-10">
+                <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-wider">
+                  TOURS NORTE LITORAL & INTERIOR
+                </h1>
+                <p className="text-[#F7F4EE]/90 text-sm sm:text-base max-w-2xl mx-auto font-medium">
+                  Roteiros e expedições exclusivas: das encostas vinhateiras do Rio Douro ao Berço de Guimarães, a herança de Braga, Ponte de Lima, Viana do Castelo e o Porto.
+                </p>
+              </div>
+            </div>
+            <WaveSeparator />
+
+            <FadeInSection>
+              <ToursSection
+                onOpenBookingModal={handleOpenBookingModal}
+                onOpenBudgetModal={handleOpenBudgetModal}
+              />
+            </FadeInSection>
+            
+            <WaveSeparator />
+
+            <FadeInSection>
+              <BookingContactSection
+                preselectedActivity="surf"
+                inquiryNote={inquiryNote}
+              />
+            </FadeInSection>
+          </div>
+        )}
+
+        {/* PAGE 8: CONTACTOS */}
         {currentPage === 'contactos' && (
           <div className="animate-in fade-in duration-300">
             <div className="pt-36 sm:pt-44 pb-14 sm:pb-16 px-4 bg-[#73999C] text-white border-b border-[#73999C]/20 text-center relative overflow-hidden">

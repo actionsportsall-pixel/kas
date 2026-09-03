@@ -58,6 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
     { name: t('PADEL', 'PADEL', 'PADEL'), id: 'padel', tag: t('Aulas & Torneios', 'Lessons & Tournaments', 'Kurse & Turniere') },
     { name: t('BOOT CAMPS', 'BOOT CAMPS', 'BOOTCAMPS'), id: 'bootcamp', tag: t('Imersão & Treino', 'Immersion & Training', 'Immersion & Training') },
     { name: t('TEAM BUILDING', 'TEAM BUILDING', 'TEAMBUILDING'), id: 'teambuilding', tag: t('Retiros & Empresas', 'Retreats & Corporate', 'Retreats & Firmen') },
+    { name: t('TOURS NORTE LITORAL & INTERIOR', 'NORTH TOURS COAST & INLAND', 'NORD-TOUREN KÜSTE & INLAND'), id: 'tours', tag: t('Porto, Douro, Guimarães & Minho', 'Porto, Douro, Guimarães & Minho', 'Porto, Douro, Guimarães & Minho') },
   ];
 
   const isExpActive = experienceLinks.some((link) => link.id === currentPage) || currentPage === 'experiencias';
@@ -135,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
 
             {/* Dropdown Menu Box with seamless pt-1.5 top padding container to prevent mouseLeave flicker */}
             {dropdownOpen && (
-              <div className="absolute top-full left-0 pt-1.5 w-64 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+              <div className="absolute top-full left-0 pt-1.5 w-72 sm:w-80 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                 <div className="bg-[#F7F4EE] border border-[#73999C]/30 rounded-2xl shadow-2xl py-1.5 overflow-hidden divide-y divide-[#73999C]/10">
                   {experienceLinks.map((item) => {
                     const isActive = currentPage === item.id;

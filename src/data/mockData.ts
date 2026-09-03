@@ -21,6 +21,7 @@ export const SECRET_SPOT_3_IMAGE = '/images/secret_spot_3.jpg';
 export const PRIVATE_SURF_IMAGE = '/images/privada 2 pessoas.JPG';
 export const SUNSET_IMAGE = '/images/por_do_sol.jpg';
 export const PRIVATE_SURF_SUNSET_IMAGE = '/images/por_do_sol.jpg';
+export const TOURS_NORTE_IMAGE = '/images/tours_norte_douro_guimaraes_sq.jpg';
 export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1Lcga3lFaORHgvOl0-BfV-gdReDnfCPVhr1JxBnl1z0M/edit';
 
 // KAS Brand Text Constants
@@ -332,7 +333,7 @@ export const SERGIO_BIO: SergioCostaBio = {
 export const FUTURE_SERVICES: FutureServiceItem[] = [
   {
     id: 'cycling-collection',
-    title: 'Experiências de Bicicleta',
+    title: 'Passeios de Bicicleta',
     description: 'Rotas de estrada e montanha pelas mais belas paisagens de Portugal com suporte total.',
     iconName: '',
     badge: '',
@@ -345,6 +346,14 @@ export const FUTURE_SERVICES: FutureServiceItem[] = [
     iconName: '',
     badge: '',
     image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'north-tours',
+    title: 'Tours Norte Litoral & Interior',
+    description: 'Tours e expedições pelo norte litoral e interior: Porto, Douro, Braga, Guimarães, Ponte de Lima e Viana do Castelo.',
+    iconName: '',
+    badge: '',
+    image: TOURS_NORTE_IMAGE,
   },
   {
     id: 'nature-walks',
@@ -442,11 +451,19 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-5',
-    title: 'Land Experience — Cycling & Nature',
+    title: 'Passeios de Bicicleta',
     category: 'bike',
     type: 'image',
     src: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80',
     caption: 'A descoberta da costa sobre duas rodas com guias peritos.',
+  },
+  {
+    id: 'gal-8',
+    title: 'Tours Norte Litoral & Interior',
+    category: 'tours',
+    type: 'image',
+    src: TOURS_NORTE_IMAGE,
+    caption: 'Tours e expedições pelo norte litoral e interior: encostas vinhateiras do Douro e o Castelo de Guimarães.',
   },
   {
     id: 'gal-6',

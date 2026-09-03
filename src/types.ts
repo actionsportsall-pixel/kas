@@ -67,7 +67,7 @@ export interface TestimonialItem {
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'surf' | 'padel' | 'bootcamp' | 'teambuilding' | 'bike';
+  category: 'surf' | 'padel' | 'bootcamp' | 'teambuilding' | 'bike' | 'tours';
   type: 'image' | 'video';
   src: string;
   aspectRatio?: string;

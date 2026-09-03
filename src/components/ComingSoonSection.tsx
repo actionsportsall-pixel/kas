@@ -30,15 +30,15 @@ export const ComingSoonSection: React.FC = () => {
 
           <p className="text-[#2B2F33]/80 text-base sm:text-lg leading-relaxed font-normal">
             {t(
-              'Expandimos constantemente os horizontes da Action Sports. Fica atento às próximas novidades sobre duas rodas!',
-              'We are constantly expanding Action Sports horizons. Stay tuned for upcoming two-wheel adventures!',
-              'Wir erweitern ständig die Horizonte von Action Sports. Bleiben Sie dran für kommende Abenteuer auf zwei Rädern!'
+              'Expandimos constantemente os horizontes da Action Sports. Fica atento às próximas novidades outdoor, tours e expedições!',
+              'We are constantly expanding Action Sports horizons. Stay tuned for upcoming outdoor adventures, tours and expeditions!',
+              'Wir erweitern ständig die Horizonte von Action Sports. Bleiben Sie dran für kommende Outdoor-Abenteuer, Touren und Expeditionen!'
             )}
           </p>
         </div>
 
         {/* Future Services Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {FUTURE_SERVICES.map((srv) => {
             const Icon = getIcon(srv.iconName);
             return (

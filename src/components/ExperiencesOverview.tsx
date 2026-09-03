@@ -14,7 +14,7 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
     {
       id: 'ocean',
       pageId: 'surf',
-      title: '',
+      title: 'SURF',
       subtitle: t('Surf, SUP, Guia de Surf & Sessões ao Pôr do Sol', 'Surf, SUP, Guiding & Sunset Sessions', 'Surf, SUP, Guiding & Sunset Sessions'),
       description: t(
         'Aulas privadas e pequenos grupos, Guia de Surf pelos melhores locais secretos, Stand Up Paddle em águas serenas e Sessões ao Pôr do Sol inesquecíveis.',
@@ -39,11 +39,15 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
     {
       id: 'land',
       pageId: 'padel',
-      title: '',
-      subtitle: t('Aulas & Torneios Express', 'Lessons & Express Tournaments', 'Kurse & Express-Turniere'),
-      description: '',
+      title: 'PADEL',
+      subtitle: t('Aulas & Torneios', 'Lessons & Tournaments', 'Kurse & Turniere'),
+      description: t(
+        'Aulas privadas e em grupo com foco na técnica e tática de jogo, além de torneios express dinâmicos de 2 horas desenhados à medida.',
+        'Private and group lessons focused on technique and game tactics, plus 2-hour dynamic express tournaments tailored to you.',
+        'Privat- und Gruppenunterricht mit Fokus auf Technik und Spieltaktik sowie maßgeschneiderte 2-Stunden-Expressturniere.'
+      ),
       icon: Trophy,
-      tag: '',
+      tag: t('Padel & Torneios', 'Padel & Tournaments', 'Padel & Turniere'),
       items: [
         t('Experiências de Padel', 'Padel Experiences', 'Padel-Erlebnisse'),
         t('Aulas Privadas', 'Private Lessons', 'Privatunterricht'),
@@ -57,9 +61,34 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
       dotColor: 'bg-[#C96F4B]',
     },
     {
+      id: 'tours',
+      pageId: 'tours',
+      title: 'TOURS NORTE',
+      subtitle: t('Litoral & Interior', 'Coast & Inland', 'Küste & Inland'),
+      description: t(
+        'Tours e expedições pelo norte litoral e interior. Do Vale do Douro ao Berço de Guimarães, a monumentalidade de Braga, Ponte de Lima e Viana do Castelo.',
+        'Expeditions and tours across northern coast and inland. From the Douro Valley to Guimarães, historic Braga, Ponte de Lima, and Viana do Castelo.',
+        'Touren und Expeditionen an der Nordküste und im Landesinneren: Douro-Tal, Burg Guimarães, Braga, Ponte de Lima und Viana do Castelo.'
+      ),
+      icon: Compass,
+      tag: t('Cultura & Natureza', 'Culture & Nature', 'Kultur & Natur'),
+      items: [
+        t('Cruzeiros & Quintas no Douro', 'Douro Cruises & Wine Estates', 'Douro-Kreuzfahrten & Weingüter'),
+        t('Castelo de Guimarães Medieval', 'Medieval Guimarães Castle', 'Mittelalterliche Burg Guimarães'),
+        t('Braga Histórica & Santuários', 'Historic Braga & Sanctuaries', 'Historisches Braga & Heiligtümer'),
+        t('Ponte de Lima & Viana do Castelo', 'Ponte de Lima & Viana do Castelo', 'Ponte de Lima & Viana do Castelo'),
+        t('Roteiros Personalizados com Guia', 'Tailored Guided Itineraries', 'Geführte individuelle Routen'),
+      ],
+      themeBg: 'bg-[#A8C7C2]/20 border-[#73999C]/35',
+      themeText: 'text-[#273334]',
+      accentColor: 'text-[#C96F4B]',
+      badgeBg: 'bg-[#A8C7C2] text-[#273334]',
+      dotColor: 'bg-[#C96F4B]',
+    },
+    {
       id: 'signature',
       pageId: 'teambuilding',
-      title: '',
+      title: 'TEAM BUILDING',
       subtitle: t('Retiros Privados, Executivos e Personalizadas', 'Private, Executive Retreats & Bespoke', 'Private, Executive Retreats & Bespoke'),
       description: t(
         'Programas 100% personalizados para clientes exigentes, famílias, quadros executivos e retiros de empresa. Hospitalidade, rigor e exclusividade total.',
@@ -101,8 +130,8 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
           </p>
         </div>
 
-        {/* 3 Collections Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* 4 Collections Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {collections.map((col) => {
             const Icon = col.icon;
             const isSignature = col.id === 'signature';

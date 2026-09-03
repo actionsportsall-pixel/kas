@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GALLERY_ITEMS } from '../data/mockData';
 import { GalleryItem } from '../types';
-import { Camera, X, Play, Maximize2, Image as ImageIcon } from 'lucide-react';
+import { Camera, X, Play, Maximize2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const GallerySection: React.FC = () => {
@@ -16,6 +16,7 @@ export const GallerySection: React.FC = () => {
     { id: 'bootcamp', label: t('Boot Camps', 'Boot Camps', 'Boot Camps') },
     { id: 'teambuilding', label: t('Team Building', 'Team Building', 'Teambuilding') },
     { id: 'bike', label: t('Bike & Natureza', 'Bike & Nature', 'Bike & Natur') },
+    { id: 'tours', label: t('Tours Norte', 'North Tours', 'Nord-Touren') },
   ];
 
   const filteredItems =
@@ -101,12 +102,9 @@ export const GallerySection: React.FC = () => {
           <div className="relative max-w-4xl w-full bg-[#F3E7DB] rounded-sm overflow-hidden border border-[#2B2F33]/20 shadow-2xl flex flex-col">
             {/* Modal Header */}
             <div className="p-4 bg-[#F7F4EE] border-b border-[#73999C]/20 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <ImageIcon className="w-4 h-4 text-[#C96F4B]" />
-                <span className="font-display text-2xl text-[#273334] uppercase tracking-wider">
-                  {selectedMedia.title}
-                </span>
-              </div>
+              <span className="font-display text-2xl text-[#273334] uppercase tracking-wider">
+                {selectedMedia.title}
+              </span>
               <button
                 onClick={() => setSelectedMedia(null)}
                 className="p-1.5 bg-[#F7F4EE] text-[#273334] hover:text-[#C96F4B] border border-[#73999C]/20 rounded-xl cursor-pointer"
