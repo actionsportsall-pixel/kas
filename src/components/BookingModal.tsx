@@ -47,6 +47,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       case 'tours_norte':
         return 'tours_norte';
       default:
+        if (actKey && actKey.startsWith('tour')) {
+          return 'tours_norte';
+        }
         return 'aula_privada_surf';
     }
   };
