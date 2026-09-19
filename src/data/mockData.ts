@@ -26,7 +26,7 @@ export const CANYONING_IMAGE = '/images/canyoning_geres_composite.jpg';
 export const CANYONING_CASCATA_IMAGE = '/images/canyoning_geres_cascata.jpg';
 export const CANYONING_RIO_IMAGE = '/images/canyoning_geres_rio.jpg';
 export const BIKE_MTB_IMAGE = '/images/bike_mtb.jpg';
-export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1Lcga3lFaORHgvOl0-BfV-gdReDnfCPVhr1JxBnl1z0M/edit';
+export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1zMDsvuvc0hyr3YEZZS1lzWo95iuKRHy79dgQdnOpOgI/edit';
 
 // KAS Brand Text Constants
 export const KAS_MANIFESTO = {
@@ -186,7 +186,14 @@ export const SURF_SERVICES: ServiceCardItem[] = [
     category: 'surf',
     activityKey: 'boot_camp',
     tag: 'Viagens de Surf',
-    highlights: ['Água quente, sol e boas ondas', 'Guia e acompanhamento experiente', 'Logística e alojamento selecionado', 'Para todos os níveis'],
+    destinations: ['Maldivas', 'Açores', 'Indonésia', 'Sri Lanka'],
+    highlights: [
+      'Destinos: Maldivas, Açores, Indonésia e Sri Lanka',
+      'Água quente, sol e boas ondas',
+      'Guia e acompanhamento experiente',
+      'Logística e alojamento selecionado',
+      'Para todos os níveis',
+    ],
   },
 ];
 
@@ -483,6 +490,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'surf',
     type: 'image',
     src: SURF_TRIP_IMAGE,
-    caption: 'Água quente, sol e boas ondas.',
+    caption: 'Água quente, sol e boas ondas em destinos de sonho: Maldivas, Açores, Indonésia e Sri Lanka.',
   },
 ];

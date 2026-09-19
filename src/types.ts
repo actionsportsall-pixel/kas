@@ -21,6 +21,7 @@ export interface ServiceCardItem {
   activityKey: ActivityType;
   tag?: string;
   highlights?: string[];
+  destinations?: string[];
 }
 
 export interface BootCampDetail {

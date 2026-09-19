@@ -1,6 +1,6 @@
 import React from 'react';
 import { SURF_SERVICES } from '../data/mockData';
-import { CheckCircle2, MessageCircle, Calendar } from 'lucide-react';
+import { CheckCircle2, MessageCircle, Calendar, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const surfActionImg = '/images/surf_viagem.jpg';
@@ -50,6 +50,24 @@ export const SurfSection: React.FC<SurfSectionProps> = ({
                 {/* Highlights Bullet List */}
                 {service.highlights && service.highlights.length > 0 && (
                   <div className="pt-3 border-t border-[#2B2F33]/10 space-y-2">
+                    {service.destinations && service.destinations.length > 0 && (
+                      <div className="pb-2">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#C96F4B] flex items-center gap-1 mb-1.5">
+                          <MapPin className="w-3.5 h-3.5 text-[#C96F4B]" />
+                          <span>{t('Destinos:', 'Destinations:', 'Reiseziele:')}</span>
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {service.destinations.map((dest) => (
+                            <span
+                              key={dest}
+                              className="text-[11px] font-bold bg-[#E07A5F]/15 text-[#2B2F33] px-2.5 py-0.5 rounded-md border border-[#E07A5F]/30 shadow-2xs"
+                            >
+                              {dest}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     {service.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-xs font-medium text-[#2B2F33]/90">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#E07A5F] shrink-0" />
