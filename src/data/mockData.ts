@@ -26,7 +26,7 @@ export const CANYONING_IMAGE = '/images/canyoning_geres_composite.jpg';
 export const CANYONING_CASCATA_IMAGE = '/images/canyoning_geres_cascata.jpg';
 export const CANYONING_RIO_IMAGE = '/images/canyoning_geres_rio.jpg';
 export const BIKE_MTB_IMAGE = '/images/bike_mtb.jpg';
-export const GOOGLE_BOOKING_FORM_URL = 'https://docs.google.com/forms/d/1zMDsvuvc0hyr3YEZZS1lzWo95iuKRHy79dgQdnOpOgI/edit';
+export const GOOGLE_BOOKING_FORM_URL = 'https://forms.gle/6sbNQApWQ1ZDeE9W8';
 
 // KAS Brand Text Constants
 export const KAS_MANIFESTO = {
