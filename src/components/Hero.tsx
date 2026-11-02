@@ -15,7 +15,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
     {
       id: 'surf-trips',
       image: '/images/surf_viagem.jpg',
-      fallback: '/images/surftrip_group.jpg',
+      fallback: '/images/surf_viagem_action_1787915664456.jpg',
       tag: t('EXPEDIÇÕES DE SURF · DESTINOS DE SONHO', 'SURF EXPEDITIONS · DREAM DESTINATIONS', 'SURF-EXPEDITIONEN · TRAUMZIELE'),
       title: t('VIAGENS DE SURF', 'SURF TRIPS & EXPEDITIONS', 'SURFREISEN & EXPEDITIONEN'),
       subtitle: t(
@@ -29,8 +29,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
     },
     {
       id: 'surf-experiences',
-      image: '/images/hero_slide_surf.jpg',
-      fallback: '/images/surf.png',
+      image: '/images/surf_action_spray_1787585994752.jpg',
+      fallback: '/images/hero_slide_surf.jpg',
       tag: t('SURF & OCEANO', 'SURF & OCEAN', 'SURF & OZEAN'),
       title: t('SURF & SPOTS SECRETOS', 'SURF & SECRET SPOTS', 'SURF & SECRET SPOTS'),
       subtitle: t(
@@ -43,8 +43,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
     },
     {
       id: 'padel',
-      image: '/images/hero_slide_padel.jpg',
-      fallback: '/images/padel.jpg',
+      image: '/images/padel_action_court_1786008982529.jpg',
+      fallback: '/images/hero_slide_padel.jpg',
       tag: t('PADEL & TORNEIOS', 'LAND & PADEL', 'LAND & PADEL'),
       title: t('PADEL DE ALTO NÍVEL', 'HIGH-LEVEL PADEL', 'HOCHWERTIGES PADEL'),
       subtitle: t(
@@ -57,8 +57,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
     },
     {
       id: 'canyoning',
-      image: '/images/hero_slide_canyoning.jpg',
-      fallback: '/images/geres_cascata.jpg',
+      image: '/images/geres_cascata.jpg',
+      fallback: '/images/hero_slide_canyoning.jpg',
       tag: t('GERÊS & AVENTURA', 'GERÊS & ADVENTURE', 'GERÊS & ABENTEUER'),
       title: t('CANYONING NO GERÊS', 'CANYONING IN GERÊS', 'CANYONING IM GERÊS'),
       subtitle: t(
@@ -71,8 +71,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
     },
     {
       id: 'tours',
-      image: '/images/douro.jpg',
-      fallback: '/images/santiago_compostela.jpg',
+      image: '/images/amarante_douro.jpg',
+      fallback: '/images/douro.jpg',
       tag: t('TOURS PRIVADOS', 'PRIVATE TOURS', 'PRIVATE TOUREN'),
       title: t('TOURS NORTE & VALE DO DOURO', 'NORTH TOURS & DOURO VALLEY', 'NORD-TOUREN & DOURO-TAL'),
       subtitle: t(
@@ -96,26 +96,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
   const IconComponent = slide.icon || Compass;
 
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#273334]">
-      {/* Background Slides */}
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#1E2728]">
+      {/* Background Slides with high nitidez, crisp contrast, and crystal clear visibility */}
       {heroSlides.map((s, index) => (
         <div
           key={s.id}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
           }`}
         >
           <img
             src={s.image}
             alt={s.title}
+            loading={index === 0 ? 'eager' : 'lazy'}
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = s.fallback;
             }}
-            className="w-full h-full object-cover object-center scale-105 transition-transform duration-[7000ms] ease-out"
+            className="w-full h-full object-cover object-center contrast-[1.08] brightness-[1.03] saturate-[1.08] filter drop-shadow-sm transition-all duration-700"
+            style={{
+              imageRendering: 'auto',
+            }}
           />
-          {/* Subtle gradient overlays for high legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#273334] via-[#273334]/65 to-[#273334]/40" />
-          <div className="absolute inset-0 bg-black/30" />
+          {/* Crisp, non-muddy overlays: delicate top vignette + bottom section blend, preserving full photo brilliance */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#273334] via-[#273334]/20 to-black/25 pointer-events-none" />
+          <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/30 pointer-events-none" />
         </div>
       ))}
 
@@ -126,11 +130,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
           <span>{slide.tag}</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-wider uppercase leading-none mb-4 text-white drop-shadow-md">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-wider uppercase leading-none mb-4 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
           {slide.title}
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-[#F7F4EE]/90 max-w-2xl mx-auto font-medium mb-6 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-[#F7F4EE] max-w-2xl mx-auto font-medium mb-6 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
           {slide.subtitle}
         </p>
 
