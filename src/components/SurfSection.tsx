@@ -19,15 +19,18 @@ export const SurfSection: React.FC<SurfSectionProps> = ({
   return (
     <section id="surf" className="py-24 relative overflow-hidden border-b border-[#2B2F33]/10">
       {/* Background Surf Image with Cinematic Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src={surfActionImg}
           alt="Surf Action Background"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = '/images/surf_action_spray_1787585994752.jpg';
+          }}
           className="w-full h-full object-cover object-center"
         />
-        {/* Semi-transparent soft tone overlay to ensure excellent readability of the 6 cards */}
-        <div className="absolute inset-0 bg-[#273334]/55 backdrop-blur-[1px]" />
+        {/* Subtle cinematic gradient overlay to ensure ocean waves are clearly visible while cards remain perfectly legible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1C2728]/45 via-[#1C2728]/30 to-[#1C2728]/55" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

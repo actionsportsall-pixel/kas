@@ -80,14 +80,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo - KAS Luxury Outdoor Experiences */}
+        {/* Brand Logo - KAS Luxury Outdoor Experiences (Clicks to Início) */}
         <a
           href="#inicio"
           onClick={(e) => handleNavClick(e, 'inicio')}
-          className="flex items-center gap-2.5 group focus:outline-none shrink-0"
+          title="KAS - Início"
+          aria-label="KAS - Início"
+          className="flex items-center gap-2.5 group focus:outline-none shrink-0 cursor-pointer hover:opacity-85 transition-all duration-200"
         >
           <div className="flex flex-col leading-none">
-            <span className="font-display text-4xl sm:text-5xl tracking-widest text-[#273334] font-bold uppercase">
+            <span className="font-display text-4xl sm:text-5xl tracking-widest text-[#273334] group-hover:text-[#C96F4B] transition-colors font-bold uppercase">
               KAS
             </span>
             <div className="flex flex-col text-[8px] uppercase tracking-[0.22em] text-[#73999C] font-semibold leading-[1.15] mt-0.5">
@@ -99,19 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {/* INÍCIO / HOME */}
-          <a
-            href="#inicio"
-            onClick={(e) => handleNavClick(e, 'inicio')}
-            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-2xl flex items-center justify-center ${
-              currentPage === 'inicio'
-                ? 'bg-[#73999C] text-white border-b-2 border-[#C96F4B] shadow-xs'
-                : 'bg-[#73999C]/15 text-[#273334] border border-[#73999C]/25 hover:bg-[#73999C] hover:text-white'
-            }`}
-          >
-            {t('INÍCIO', 'HOME', 'START')}
-          </a>
+        <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
 
           {/* EXPERIÊNCIAS Dropdown */}
           <div
@@ -297,19 +287,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-[#73999C]/20 px-4 pt-4 pb-6 space-y-3 animate-in slide-in-from-top duration-200 shadow-xl">
           <div className="flex flex-col space-y-1">
-            <a
-              href="#inicio"
-              onClick={(e) => handleNavClick(e, 'inicio')}
-              className={`px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-between ${
-                currentPage === 'inicio'
-                  ? 'bg-[#73999C] text-white border-l-4 border-[#C96F4B]'
-                  : 'bg-[#73999C]/15 text-[#273334] hover:bg-[#73999C] hover:text-white'
-              }`}
-            >
-              <span>{t('INÍCIO', 'HOME')}</span>
-              <span className="text-[#C96F4B] text-xs">→</span>
-            </a>
-
             {/* Mobile Experiences Group */}
             <div className="space-y-1.5 bg-[#73999C]/10 rounded-2xl p-2.5 border border-[#73999C]/20">
               {experienceLinks.map((link) => {
