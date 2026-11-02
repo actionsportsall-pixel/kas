@@ -1,140 +1,105 @@
 import React, { useState } from 'react';
 import { GALLERY_ITEMS } from '../data/mockData';
-import { GalleryItem } from '../types';
-import { Camera, X, Play, Maximize2 } from 'lucide-react';
+import { Camera, Sparkles, Filter } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const GallerySection: React.FC = () => {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<string>('todos');
-  const [selectedMedia, setSelectedMedia] = useState<GalleryItem | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const categories = [
-    { id: 'todos', label: t('Todas as Fotos', 'All Photos', 'Alle Fotos') },
-    { id: 'surf', label: t('Aulas de Surf', 'Surf Lessons', 'Surfkurse') },
-    { id: 'padel', label: t('Torneios de Padel', 'Padel Tournaments', 'Padel-Turniere') },
-    { id: 'bootcamp', label: t('Boot Camps', 'Boot Camps', 'Boot Camps') },
-    { id: 'teambuilding', label: t('Team Building', 'Team Building', 'Teambuilding') },
-    { id: 'bike', label: t('Bike & Natureza', 'Bike & Nature', 'Bike & Natur') },
-    { id: 'tours', label: t('Tours Norte', 'North Tours', 'Nord-Touren') },
+    { id: 'all', label: t('Todos', 'All', 'Alle') },
+    { id: 'surf', label: 'Surf' },
+    { id: 'padel', label: 'Padel' },
+    { id: 'bootcamp', label: 'Boot Camp' },
+    { id: 'teambuilding', label: 'Team Building' },
   ];
 
   const filteredItems =
-    activeCategory === 'todos'
+    activeCategory === 'all'
       ? GALLERY_ITEMS
       : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="py-24 bg-[#F8F6F0] relative overflow-hidden border-b border-[#2B2F33]/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <h2 className="font-display text-5xl sm:text-6xl text-[#2B2F33] tracking-wide uppercase">
-            {t('AÇÃO &', 'ACTION &', 'AKTION &')} <span className="text-[#2B2F33]">{t('MEMÓRIAS', 'MEMORIES', 'ERINNERUNGEN')}</span>
-          </h2>
-
-          <p className="text-[#2B2F33]/80 text-base sm:text-lg leading-relaxed font-normal">
-            {t(
-              'Espreita alguns dos melhores momentos das nossas sessões de surf, padel, boot camps e eventos de equipa.',
-              'Take a look at some of the finest moments from our surf sessions, padel tournaments, boot camps, and team events.',
-              'Werfen Sie einen Blick auf einige der besten Momente unserer Surf-, Padel-, Boot Camp- und Teamevents.'
-            )}
-          </p>
+    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#A8C7C2]/20 text-[#273334] text-xs font-bold uppercase tracking-wider">
+          <Camera className="w-3.5 h-3.5 text-[#73999C]" />
+          <span>{t('Momentos & Memórias', 'Moments & Memories', 'Momente & Erinnerungen')}</span>
         </div>
+        <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#273334] uppercase tracking-wide">
+          {t('A Nossa Galeria', 'Our Gallery', 'Unsere Galerie')}
+        </h2>
+        <p className="text-sm sm:text-base text-[#273334]/80">
+          {t(
+            'Vislumbres autênticos das nossas experiências no mar, na terra e nas montanhas.',
+            'Authentic glimpses of our experiences at sea, land and mountains.',
+            'Authentische Einblicke in unsere Erlebnisse am Meer, an Land und in den Bergen.'
+          )}
+        </p>
 
-        {/* Filter Categories Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12 max-w-3xl mx-auto">
+        {/* Filter buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-2xl flex items-center justify-center ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-[#73999C] text-white border-b-2 border-[#C96F4B] shadow-xs'
-                  : 'bg-[#73999C]/15 text-[#273334] border border-[#73999C]/25 hover:bg-[#73999C] hover:text-white'
+                  ? 'bg-[#C96F4B] text-white shadow-md'
+                  : 'bg-white text-[#273334] hover:bg-[#F7F4EE] border border-[#A8C7C2]/30'
               }`}
             >
               {cat.label}
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedMedia(item)}
-              className="group relative cursor-pointer bg-[#F3E7DB] rounded-sm border border-[#2B2F33]/15 overflow-hidden aspect-square shadow-sm"
-            >
-              <img
-                src={item.src}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-[#2B2F33]/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-between">
-                <div className="self-end">
-                  <span className="p-2 bg-[#A7CFC6] text-[#2B2F33] block rounded-sm">
-                    <Maximize2 className="w-4 h-4" />
-                  </span>
-                </div>
-
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest font-bold text-[#A7CFC6] block">
-                    {item.category}
-                  </span>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider line-clamp-1">
-                    {item.title}
-                  </h4>
-                </div>
-              </div>
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
+            onClick={() => setSelectedImage(item.src)}
+            className="group relative rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 aspect-[4/3] bg-[#73999C]/10 cursor-pointer border border-[#A8C7C2]/20"
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/surf.png';
+              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#273334]/90 via-[#273334]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#E4CEAD]">
+                {item.category}
+              </span>
+              <h4 className="text-lg font-display font-bold uppercase tracking-wide">
+                {item.title}
+              </h4>
+              <p className="text-xs text-[#F7F4EE]/90 line-clamp-2 mt-1">
+                {item.caption}
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {/* Lightbox Modal */}
-      {selectedMedia && (
-        <div className="fixed inset-0 z-50 bg-[#2B2F33]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
-          <div className="relative max-w-4xl w-full bg-[#F3E7DB] rounded-sm overflow-hidden border border-[#2B2F33]/20 shadow-2xl flex flex-col">
-            {/* Modal Header */}
-            <div className="p-4 bg-[#F7F4EE] border-b border-[#73999C]/20 flex items-center justify-between">
-              <span className="font-display text-2xl text-[#273334] uppercase tracking-wider">
-                {selectedMedia.title}
-              </span>
-              <button
-                onClick={() => setSelectedMedia(null)}
-                className="p-1.5 bg-[#F7F4EE] text-[#273334] hover:text-[#C96F4B] border border-[#73999C]/20 rounded-xl cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Expanded Image */}
-            <div className="max-h-[70vh] bg-[#273334] flex items-center justify-center overflow-hidden">
-              <img
-                src={selectedMedia.src}
-                alt={selectedMedia.title}
-                className="max-h-[70vh] w-auto object-contain"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-
-            {/* Caption Footer */}
-            <div className="p-4 bg-[#F7F4EE] border-t border-[#73999C]/20 flex items-center justify-between">
-              <p className="text-[#273334]/80 text-xs">
-                {selectedMedia.caption}
-              </p>
-              <button
-                onClick={() => setSelectedMedia(null)}
-                className="px-6 py-2.5 bg-[#73999C] hover:bg-[#5D8184] text-white font-bold text-xs uppercase tracking-wider rounded-2xl cursor-pointer shadow-xs"
-              >
-                {t('Fechar', 'Close', 'Schließen')}
-              </button>
-            </div>
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={selectedImage}
+              alt="Preview"
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       )}

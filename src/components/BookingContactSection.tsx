@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { FAQSection } from './FAQSection';
 
 interface BookingContactSectionProps {
-  preselectedActivity?: ActivityType;
+  preselectedActivity?: ActivityType | string;
   inquiryNote?: string;
   onOpenBookingModal?: (activityKey?: string) => void;
   showFaq?: boolean;

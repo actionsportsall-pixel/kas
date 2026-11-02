@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Waves, Trophy, Compass, Sparkles, Mountain } from 'lucide-react';
+import { ArrowRight, Waves, Trophy, Compass, Sparkles, Mountain, Palmtree } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface OverviewProps {
@@ -35,6 +35,32 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
       accentColor: 'text-[#73999C]',
       badgeBg: 'bg-[#A8C7C2] text-[#273334]',
       dotColor: 'bg-[#73999C]',
+    },
+    {
+      id: 'surf_trips',
+      pageId: 'surf',
+      title: t('VIAGENS DE SURF', 'SURF TRIPS', 'SURFREISEN'),
+      subtitle: t('Destinos: Maldivas, Açores, Indonésia & Sri Lanka', 'Destinations: Maldives, Azores, Indonesia & Sri Lanka', 'Reiseziele: Malediven, Azoren, Indonesien & Sri Lanka'),
+      description: t(
+        'Água quente, sol e boas ondas. Expedições de surf inesquecíveis organizadas com todo o conforto, acompanhamento e orientação.',
+        'Warm water, sunshine and great waves. Unforgettable surf expeditions organized with absolute comfort, expert guidance and coaching.',
+        'Warmes Wasser, Sonne und perfekte Wellen. Unvergessliche Surfexpeditionen mit höchstem Komfort, Betreuung und Guiding.'
+      ),
+      icon: Palmtree,
+      tag: t('Expedições & Viagens', 'Expeditions & Trips', 'Expeditionen & Reisen'),
+      destinations: ['Maldivas', 'Açores', 'Indonésia', 'Sri Lanka'],
+      items: [
+        t('Destinos: Maldivas, Açores, Indonésia e Sri Lanka', 'Destinations: Maldives, Azores, Indonesia & Sri Lanka', 'Reiseziele: Malediven, Azoren, Indonesien & Sri Lanka'),
+        t('Água quente, sol e boas ondas', 'Warm water, sunshine and great waves', 'Warmes Wasser, Sonne und gute Wellen'),
+        t('Guia e acompanhamento experiente', 'Experienced guide and accompaniment', 'Erfahrener Guide und Begleitung'),
+        t('Logística e alojamento selecionado', 'Selected logistics and curated accommodation', 'Logistik und ausgewählte Unterkunft'),
+        t('Para todos os níveis', 'For all skill levels', 'Für alle Level geeignet'),
+      ],
+      themeBg: 'bg-[#E4CEAD]/30 border-[#E4CEAD]/55',
+      themeText: 'text-[#273334]',
+      accentColor: 'text-[#C96F4B]',
+      badgeBg: 'bg-[#E4CEAD] text-[#273334]',
+      dotColor: 'bg-[#C96F4B]',
     },
     {
       id: 'land',
@@ -181,6 +207,20 @@ export const ExperiencesOverview: React.FC<OverviewProps> = ({ onOpenBookingModa
                     <p className={`text-xs leading-relaxed mb-6 ${isSignature ? 'text-white/90' : 'text-[#273334]/80'}`}>
                       {col.description}
                     </p>
+                  )}
+
+                  {/* Optional destinations pills */}
+                  {col.destinations && col.destinations.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {col.destinations.map((dest, dIdx) => (
+                        <span
+                          key={dIdx}
+                          className="text-[10px] font-bold uppercase tracking-wider bg-[#C96F4B]/15 text-[#273334] px-2.5 py-0.5 rounded border border-[#C96F4B]/30"
+                        >
+                          {dest}
+                        </span>
+                      ))}
+                    </div>
                   )}
 
                   {/* Bullet items inside collection */}

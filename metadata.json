@@ -1,6 +1,5 @@
 {
-  "name": "KAS - Luxury Outdoor Experiences",
-  "description": "KAS - Experiências premium de desporto, aventura e natureza. Surf, Padel, Cycling, Moto Tours, Team Building e Experiências Exclusivas.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "name": "KAS — Luxury Outdoor Experiences",
+  "description": "KAS Luxury Outdoor Experiences - Surf, Padel, Canyoning, Tours Privados & Team Building no Norte de Portugal.",
+  "requestFramePermissions": []
 }

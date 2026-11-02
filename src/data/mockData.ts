@@ -21,12 +21,12 @@ export const SECRET_SPOT_3_IMAGE = '/images/secret_spot_3.jpg';
 export const PRIVATE_SURF_IMAGE = '/images/privada 2 pessoas.JPG';
 export const SUNSET_IMAGE = '/images/por_do_sol.jpg';
 export const PRIVATE_SURF_SUNSET_IMAGE = '/images/por_do_sol.jpg';
-export const TOURS_NORTE_IMAGE = '/images/tours_norte_douro_guimaraes_sq.jpg';
-export const CANYONING_IMAGE = '/images/canyoning_geres_composite.jpg';
+export const TOURS_NORTE_IMAGE = '/images/douro.jpg';
+export const CANYONING_IMAGE = '/images/geres_cascata.jpg';
 export const CANYONING_CASCATA_IMAGE = '/images/canyoning_geres_cascata.jpg';
-export const CANYONING_RIO_IMAGE = '/images/canyoning_geres_rio.jpg';
+export const CANYONING_RIO_IMAGE = '/images/geres_rio.jpg';
 export const BIKE_MTB_IMAGE = '/images/bike_mtb.jpg';
-export const GOOGLE_BOOKING_FORM_URL = 'https://forms.gle/6sbNQApWQ1ZDeE9W8';
+export const GOOGLE_BOOKING_FORM_URL = 'https://forms.gle/yRyyS23eF226qD1dA';
 
 // KAS Brand Text Constants
 export const KAS_MANIFESTO = {
