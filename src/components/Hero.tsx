@@ -117,33 +117,33 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
         </div>
       ))}
 
-      {/* Main Content with glassmorphic backdrop for perfect readability without darkening the photo */}
+      {/* Main Content without opacity boxes */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-20 sm:py-28">
-        <div className="max-w-4xl mx-auto p-6 sm:p-10 rounded-3xl bg-black/45 backdrop-blur-xs border border-white/20 shadow-2xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#E4CEAD] text-xs font-bold uppercase tracking-widest mb-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#273334] border border-[#E4CEAD]/40 text-[#E4CEAD] text-xs font-bold uppercase tracking-widest mb-6 shadow-xl">
             <IconComponent className="w-3.5 h-3.5 text-[#C96F4B]" />
             <span>{slide.tag}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-wider uppercase leading-none mb-4 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-wider uppercase leading-none mb-4 text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
             {slide.title}
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#F7F4EE] max-w-2xl mx-auto font-medium mb-6 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+          <p className="text-base sm:text-lg md:text-xl text-[#F7F4EE] max-w-2xl mx-auto font-medium mb-6 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
             {slide.subtitle}
           </p>
 
           {/* Destination Badges if available (e.g. for Viagens de Surf) */}
           {slide.destinations && (
             <div className="flex flex-wrap items-center justify-center gap-2 mb-8 animate-in fade-in duration-300">
-              <span className="text-[11px] uppercase tracking-wider text-[#E4CEAD] font-bold mr-1 flex items-center gap-1">
+              <span className="text-[11px] uppercase tracking-wider text-[#E4CEAD] font-bold mr-1 flex items-center gap-1 drop-shadow-md">
                 <MapPin className="w-3.5 h-3.5 text-[#C96F4B]" />
                 {t('Destinos:', 'Destinations:', 'Reiseziele:')}
               </span>
               {slide.destinations.map((dest) => (
                 <span
                   key={dest}
-                  className="px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold tracking-wide shadow-xs hover:bg-[#C96F4B]/50 transition-colors"
+                  className="px-3.5 py-1 rounded-full bg-[#273334] border border-white/20 text-white text-xs font-semibold tracking-wide shadow-lg hover:bg-[#C96F4B] transition-colors"
                 >
                   {dest}
                 </span>
@@ -155,7 +155,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onOpenBookingModal()}
-              className="w-full sm:w-auto px-8 py-4 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider rounded-2xl shadow-lg shadow-[#C96F4B]/30 transition-all flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-4 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
             >
               <Calendar className="w-4 h-4" />
               <span>{t('Reservar Agora', 'Book Now', 'Jetzt Buchen')}</span>
@@ -163,14 +163,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
 
             <button
               onClick={() => onNavigate(slide.pageId)}
-              className="w-full sm:w-auto px-8 py-4 bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30 font-bold text-xs uppercase tracking-wider rounded-2xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-[#F7F4EE] text-[#273334] font-bold text-xs uppercase tracking-wider rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
             >
               <span>
                 {slide.id === 'surf-trips'
                   ? t('Ver Viagens de Surf', 'Explore Surf Trips', 'Surfreisen ansehen')
                   : t('Explorar Experiências', 'Explore Experiences', 'Erlebnisse entdecken')}
               </span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#C96F4B]" />
             </button>
           </div>
         </div>
@@ -193,14 +193,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
       {/* Slide Navigation Arrows */}
       <button
         onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
-        className="hidden sm:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/30 hover:bg-black/50 text-white items-center justify-center backdrop-blur-xs transition cursor-pointer border border-white/20"
+        className="hidden sm:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#273334] hover:bg-[#C96F4B] text-white items-center justify-center transition cursor-pointer border border-white/20 shadow-xl"
         aria-label="Previous Slide"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-        className="hidden sm:flex absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/30 hover:bg-black/50 text-white items-center justify-center backdrop-blur-xs transition cursor-pointer border border-white/20"
+        className="hidden sm:flex absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#273334] hover:bg-[#C96F4B] text-white items-center justify-center transition cursor-pointer border border-white/20 shadow-xl"
         aria-label="Next Slide"
       >
         <ChevronRight className="w-6 h-6" />
