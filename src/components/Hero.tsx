@@ -112,81 +112,77 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onNavigate }) =>
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = s.fallback;
             }}
-            className="w-full h-full object-cover object-center contrast-[1.08] brightness-[1.03] saturate-[1.08] filter drop-shadow-sm transition-all duration-700"
-            style={{
-              imageRendering: 'auto',
-            }}
+            className="w-full h-full object-cover object-center"
           />
-          {/* Crisp, non-muddy overlays: delicate top vignette + bottom section blend, preserving full photo brilliance */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#273334] via-[#273334]/20 to-black/25 pointer-events-none" />
-          <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/30 pointer-events-none" />
         </div>
       ))}
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-24 sm:py-32">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E4CEAD] text-xs font-bold uppercase tracking-widest mb-6">
-          <IconComponent className="w-3.5 h-3.5 text-[#C96F4B]" />
-          <span>{slide.tag}</span>
-        </div>
-
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-wider uppercase leading-none mb-4 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-          {slide.title}
-        </h1>
-
-        <p className="text-base sm:text-lg md:text-xl text-[#F7F4EE] max-w-2xl mx-auto font-medium mb-6 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-          {slide.subtitle}
-        </p>
-
-        {/* Destination Badges if available (e.g. for Viagens de Surf) */}
-        {slide.destinations && (
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-8 animate-in fade-in duration-300">
-            <span className="text-[11px] uppercase tracking-wider text-[#E4CEAD] font-bold mr-1 flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-[#C96F4B]" />
-              {t('Destinos:', 'Destinations:', 'Reiseziele:')}
-            </span>
-            {slide.destinations.map((dest) => (
-              <span
-                key={dest}
-                className="px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-xs font-semibold tracking-wide shadow-xs hover:bg-[#C96F4B]/40 transition-colors"
-              >
-                {dest}
-              </span>
-            ))}
+      {/* Main Content with glassmorphic backdrop for perfect readability without darkening the photo */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-20 sm:py-28">
+        <div className="max-w-4xl mx-auto p-6 sm:p-10 rounded-3xl bg-black/45 backdrop-blur-xs border border-white/20 shadow-2xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#E4CEAD] text-xs font-bold uppercase tracking-widest mb-6">
+            <IconComponent className="w-3.5 h-3.5 text-[#C96F4B]" />
+            <span>{slide.tag}</span>
           </div>
-        )}
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => onOpenBookingModal()}
-            className="w-full sm:w-auto px-8 py-4 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider rounded-2xl shadow-lg shadow-[#C96F4B]/30 transition-all flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>{t('Reservar Agora', 'Book Now', 'Jetzt Buchen')}</span>
-          </button>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-wider uppercase leading-none mb-4 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+            {slide.title}
+          </h1>
 
-          <button
-            onClick={() => onNavigate(slide.pageId)}
-            className="w-full sm:w-auto px-8 py-4 bg-white/15 hover:bg-white/25 text-white backdrop-blur-sm border border-white/30 font-bold text-xs uppercase tracking-wider rounded-2xl transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>
-              {slide.id === 'surf-trips'
-                ? t('Ver Viagens de Surf', 'Explore Surf Trips', 'Surfreisen ansehen')
-                : t('Explorar Experiências', 'Explore Experiences', 'Erlebnisse entdecken')}
-            </span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <p className="text-base sm:text-lg md:text-xl text-[#F7F4EE] max-w-2xl mx-auto font-medium mb-6 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+            {slide.subtitle}
+          </p>
+
+          {/* Destination Badges if available (e.g. for Viagens de Surf) */}
+          {slide.destinations && (
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-8 animate-in fade-in duration-300">
+              <span className="text-[11px] uppercase tracking-wider text-[#E4CEAD] font-bold mr-1 flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-[#C96F4B]" />
+                {t('Destinos:', 'Destinations:', 'Reiseziele:')}
+              </span>
+              {slide.destinations.map((dest) => (
+                <span
+                  key={dest}
+                  className="px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold tracking-wide shadow-xs hover:bg-[#C96F4B]/50 transition-colors"
+                >
+                  {dest}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => onOpenBookingModal()}
+              className="w-full sm:w-auto px-8 py-4 bg-[#C96F4B] hover:bg-[#B05B3A] text-white font-bold text-xs uppercase tracking-wider rounded-2xl shadow-lg shadow-[#C96F4B]/30 transition-all flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>{t('Reservar Agora', 'Book Now', 'Jetzt Buchen')}</span>
+            </button>
+
+            <button
+              onClick={() => onNavigate(slide.pageId)}
+              className="w-full sm:w-auto px-8 py-4 bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30 font-bold text-xs uppercase tracking-wider rounded-2xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>
+                {slide.id === 'surf-trips'
+                  ? t('Ver Viagens de Surf', 'Explore Surf Trips', 'Surfreisen ansehen')
+                  : t('Explorar Experiências', 'Explore Experiences', 'Erlebnisse entdecken')}
+              </span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Slide Indicators */}
-        <div className="flex items-center justify-center gap-2 mt-12">
+        <div className="flex items-center justify-center gap-2 mt-8">
           {heroSlides.map((s, i) => (
             <button
               key={s.id}
               onClick={() => setCurrentSlide(i)}
-              className={`h-2 rounded-full transition-all cursor-pointer ${
-                i === currentSlide ? 'w-8 bg-[#C96F4B]' : 'w-2 bg-white/40 hover:bg-white/70'
+              className={`h-2.5 rounded-full transition-all cursor-pointer shadow-md ${
+                i === currentSlide ? 'w-8 bg-[#C96F4B]' : 'w-2.5 bg-white/60 hover:bg-white'
               }`}
               aria-label={`Slide ${i + 1}`}
             />
